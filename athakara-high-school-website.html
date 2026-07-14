@@ -1,0 +1,1438 @@
+<!DOCTYPE html>
+<html lang="bn" id="htmlRoot">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="pageTitle">আথাকরা উচ্চ বিদ্যালয় | জ্ঞানের আলোয় আলোকিত ভবিষ্যৎ</title>
+<meta name="description" id="pageDesc" content="আথাকরা উচ্চ বিদ্যালয় — একটি আদর্শ মাধ্যমিক শিক্ষা প্রতিষ্ঠান। ভর্তি তথ্য, নোটিশ, ফলাফল, একাডেমিক ক্যালেন্ডার ও আরও অনেক কিছু।">
+<meta name="keywords" content="স্কুল, বিদ্যালয়, মাধ্যমিক শিক্ষা, ভর্তি, নোটিশ, ফলাফল, School, Admission, Notice">
+<meta name="author" content="Athakara High School">
+
+<!-- Bootstrap 5 -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Icons -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<!-- Fonts: Bangla + Latin -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --primary:#0A3D7A; --primary-light:#1666C7; --primary-dark:#062B57;
+  --accent-green:#2F9E5B; --accent-green-dark:#227A45;
+  --bg:#F4F8FC; --surface:#FFFFFF; --text:#152437; --text-soft:#4B5F73; --border:#E1E9F2;
+  --radius:14px; --shadow:0 8px 30px rgba(10,61,122,0.08); --shadow-hover:0 14px 40px rgba(10,61,122,0.16);
+  --font-display:'Hind Siliguri','Inter',sans-serif; --font-body:'Noto Sans Bengali','Inter',sans-serif;
+}
+[data-theme="dark"]{
+  --bg:#0A1522; --surface:#101E30; --text:#EAF1F8; --text-soft:#9FB2C6; --border:#1E2E43;
+  --shadow:0 8px 30px rgba(0,0,0,0.35); --shadow-hover:0 14px 40px rgba(0,0,0,0.5);
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body); background:var(--bg); color:var(--text); transition:background .35s,color .35s; -webkit-font-smoothing:antialiased;}
+h1,h2,h3,h4,h5,h6,.font-display{font-family:var(--font-display); font-weight:700;}
+a{text-decoration:none;}
+::selection{background:var(--accent-green); color:#fff;}
+:focus-visible{outline:3px solid var(--accent-green); outline-offset:2px;}
+@media (prefers-reduced-motion: reduce){*{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important;}}
+
+#preloader{position:fixed; inset:0; background:linear-gradient(135deg,var(--primary-dark),var(--primary)); z-index:9999; display:flex; align-items:center; justify-content:center; flex-direction:column; transition:opacity .5s,visibility .5s;}
+#preloader.hide{opacity:0; visibility:hidden; pointer-events:none;}
+.loader-emblem{width:64px;height:64px;border-radius:50%; border:4px solid rgba(255,255,255,.25); border-top-color:#fff; animation:spin .9s linear infinite; margin-bottom:18px;}
+@keyframes spin{to{transform:rotate(360deg);}}
+#preloader p{color:#fff; font-family:var(--font-display); letter-spacing:.5px;}
+
+.nokshi-divider{height:14px; width:100%; background-image:radial-gradient(circle at 10px 7px, var(--accent-green) 3px, transparent 3.5px), linear-gradient(to right, transparent 49%, var(--border) 49.5%, var(--border) 50.5%, transparent 51%); background-size:20px 14px,20px 14px; background-repeat:repeat-x; opacity:.7;}
+
+.navbar-school{background:var(--surface); box-shadow:0 2px 14px rgba(10,61,122,.06); padding:.6rem 0; transition:background .35s;}
+.navbar-brand-school{display:flex; align-items:center; gap:.6rem;}
+.brand-mark{width:44px;height:44px;border-radius:12px; background:linear-gradient(135deg,var(--primary),var(--accent-green)); display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.3rem;flex-shrink:0;}
+.brand-text .name{font-family:var(--font-display); font-weight:700; font-size:1.15rem; color:var(--primary); line-height:1.1;}
+[data-theme="dark"] .brand-text .name{color:#EAF1F8;}
+.brand-text .tagline{font-size:.72rem; color:var(--accent-green); font-weight:600; letter-spacing:.3px;}
+.nav-link-school{color:var(--text) !important; font-weight:500; padding:.5rem .9rem !important; border-radius:8px; position:relative; transition:color .2s;}
+.nav-link-school.active, .nav-link-school:hover{color:var(--primary) !important;}
+[data-theme="dark"] .nav-link-school.active, [data-theme="dark"] .nav-link-school:hover{color:#7FB8FF !important;}
+.nav-link-school.active::after{content:''; position:absolute; left:12px; right:12px; bottom:2px; height:3px; border-radius:3px; background:var(--accent-green);}
+.icon-btn{width:40px;height:40px;border-radius:10px; border:1px solid var(--border); background:var(--bg); display:flex;align-items:center;justify-content:center; color:var(--text); transition:all .2s ease;}
+.icon-btn:hover{background:var(--primary); color:#fff; border-color:var(--primary); transform:translateY(-2px);}
+.lang-switcher-btn{width:auto !important; padding:0 .8rem; gap:.4rem; font-weight:600; font-size:.85rem;}
+.lang-switcher-btn:hover{background:var(--accent-green); border-color:var(--accent-green);}
+.lang-option.active-lang{background:var(--bg); font-weight:700; color:var(--primary);}
+
+.ticker-bar{background:var(--primary-dark); color:#fff; overflow:hidden; white-space:nowrap; display:flex; align-items:center; height:42px;}
+.ticker-label{background:var(--accent-green); height:100%; display:flex; align-items:center; gap:.4rem; padding:0 1rem; font-weight:700; font-size:.85rem; flex-shrink:0; z-index:2;}
+.ticker-track-wrap{overflow:hidden; flex:1; height:100%; display:flex; align-items:center;}
+.ticker-track{display:inline-flex; gap:3.5rem; animation:ticker 32s linear infinite; padding-left:100%;}
+.ticker-track span{font-size:.85rem;}
+@keyframes ticker{from{transform:translateX(0);} to{transform:translateX(-100%);}}
+.ticker-bar:hover .ticker-track{animation-play-state:paused;}
+
+.page{display:none;}
+.page.active{display:block; animation:fadeUp .5s ease;}
+@keyframes fadeUp{from{opacity:0; transform:translateY(14px);} to{opacity:1; transform:translateY(0);}}
+
+.hero{position:relative; min-height:78vh; display:flex; align-items:center; overflow:hidden; background:linear-gradient(120deg, var(--primary-dark) 0%, var(--primary) 55%, var(--accent-green-dark) 130%);}
+.hero::before{content:''; position:absolute; inset:0; opacity:.15; background-image:radial-gradient(circle, #fff 1.5px, transparent 1.6px); background-size:26px 26px;}
+.hero-slide-bg{position:absolute; inset:0; opacity:0; transition:opacity 1.2s ease;}
+.hero-slide-bg.show{opacity:1;}
+.hero-content{position:relative; z-index:3; color:#fff;}
+.hero-eyebrow{display:inline-flex; align-items:center; gap:.5rem; background:rgba(255,255,255,.12); border:1px solid rgba(255,255,255,.25); padding:.35rem .9rem; border-radius:30px; font-size:.85rem; margin-bottom:1.2rem; backdrop-filter:blur(6px);}
+.hero h1{font-size:clamp(2rem,4.5vw,3.4rem); line-height:1.25; margin-bottom:1rem;}
+.hero .lead-text{font-size:1.15rem; opacity:.92; max-width:640px; margin-bottom:2rem;}
+.btn-school-primary{background:var(--accent-green); border:none; color:#fff; font-weight:600; padding:.75rem 1.6rem; border-radius:10px; transition:all .25s; box-shadow:0 6px 18px rgba(47,158,91,.35);}
+.btn-school-primary:hover{background:var(--accent-green-dark); color:#fff; transform:translateY(-3px); box-shadow:0 12px 26px rgba(47,158,91,.45);}
+.btn-school-outline{background:transparent; border:1.5px solid rgba(255,255,255,.7); color:#fff; font-weight:600; padding:.75rem 1.6rem; border-radius:10px; transition:all .25s;}
+.btn-school-outline:hover{background:#fff; color:var(--primary); transform:translateY(-3px);}
+.hero-dots{position:absolute; bottom:22px; left:50%; transform:translateX(-50%); z-index:4; display:flex; gap:8px;}
+.hero-dot{width:9px;height:9px;border-radius:50%; background:rgba(255,255,255,.4); cursor:pointer; transition:all .3s;}
+.hero-dot.active{background:#fff; width:26px; border-radius:5px;}
+
+.section-pad{padding:4.5rem 0;}
+.section-eyebrow{color:var(--accent-green); font-weight:700; letter-spacing:.6px; font-size:.85rem; text-transform:uppercase; display:flex; align-items:center; gap:.5rem; margin-bottom:.6rem;}
+.section-eyebrow::before{content:''; width:22px; height:3px; background:var(--accent-green); border-radius:3px; display:inline-block;}
+.section-title{font-size:clamp(1.5rem,3vw,2.2rem); color:var(--text); margin-bottom:.8rem;}
+.section-sub{color:var(--text-soft); max-width:680px;}
+
+.card-school{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow); transition:transform .3s,box-shadow .3s; height:100%;}
+.card-school:hover{transform:translateY(-6px); box-shadow:var(--shadow-hover);}
+.icon-tile{width:56px;height:56px;border-radius:14px; background:linear-gradient(135deg,var(--primary),var(--accent-green)); display:flex;align-items:center;justify-content:center; color:#fff; font-size:1.4rem; margin-bottom:1rem;}
+
+.stat-block{text-align:center; padding:1.6rem 1rem;}
+.stat-num{font-family:var(--font-display); font-size:2.6rem; font-weight:700; color:var(--primary);}
+[data-theme="dark"] .stat-num{color:#7FB8FF;}
+.stat-label{color:var(--text-soft); font-weight:500;}
+
+.step-item{position:relative; padding-left:3.2rem; margin-bottom:2rem;}
+.step-num{position:absolute; left:0; top:0; width:2.4rem; height:2.4rem; border-radius:50%; background:var(--primary); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-family:var(--font-display);}
+.step-item::after{content:''; position:absolute; left:1.2rem; top:2.4rem; bottom:-2rem; width:2px; background:var(--border);}
+.step-item:last-child::after{display:none;}
+
+.table-school thead{background:var(--primary); color:#fff;}
+.table-school{background:var(--surface); border-radius:var(--radius); overflow:hidden;}
+
+.gallery-tile{border-radius:var(--radius); overflow:hidden; position:relative; height:200px; display:flex; align-items:flex-end; color:#fff; cursor:pointer; box-shadow:var(--shadow);}
+.gallery-tile .g-caption{position:relative; z-index:2; padding:1rem; font-weight:600; background:linear-gradient(to top, rgba(0,0,0,.65), transparent); width:100%;}
+
+footer.site-footer{background:var(--primary-dark); color:#DCE7F2; padding-top:3.5rem;}
+footer.site-footer h6{color:#fff; font-family:var(--font-display); margin-bottom:1rem;}
+footer.site-footer a{color:#B9CCE0; transition:color .2s;}
+footer.site-footer a:hover{color:#fff;}
+.social-circle{width:38px;height:38px;border-radius:50%; background:rgba(255,255,255,.1); display:flex; align-items:center; justify-content:center; color:#fff; transition:all .25s;}
+.social-circle:hover{background:var(--accent-green); transform:translateY(-3px);}
+
+#backToTop{position:fixed; bottom:24px; right:24px; width:48px; height:48px; border-radius:50%; background:var(--accent-green); color:#fff; border:none; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 20px rgba(0,0,0,.2); opacity:0; visibility:hidden; transform:translateY(10px); transition:all .3s; z-index:1000; font-size:1.2rem;}
+#backToTop.show{opacity:1; visibility:visible; transform:translateY(0);}
+#backToTop:hover{background:var(--accent-green-dark);}
+
+.badge-cat{background:var(--bg); border:1px solid var(--border); color:var(--text-soft); font-weight:600;}
+.badge-cat.active{background:var(--primary); color:#fff; border-color:var(--primary);}
+.form-control-school{border-radius:10px; border:1px solid var(--border); padding:.7rem 1rem; background:var(--surface); color:var(--text);}
+.form-control-school:focus{border-color:var(--accent-green); box-shadow:0 0 0 .2rem rgba(47,158,91,.15);}
+.date-widget{background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:1rem 1.3rem; box-shadow:var(--shadow); display:flex; align-items:center; gap:.8rem;}
+.section-bg-alt{background:var(--surface);}
+.avatar-circle{width:88px;height:88px;border-radius:50%; background:linear-gradient(135deg,var(--primary-light),var(--accent-green)); display:flex;align-items:center;justify-content:center; color:#fff; font-size:2rem; font-family:var(--font-display);}
+.faq-item .btn-faq{width:100%; text-align:right; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:1rem 1.2rem; display:flex; justify-content:space-between; align-items:center; color:var(--text); font-weight:600;}
+[data-lang="en"] .btn-faq{text-align:left;}
+.faq-body{padding:1rem 1.2rem; color:var(--text-soft); display:none; border:1px solid var(--border); border-top:none; border-radius:0 0 10px 10px; background:var(--bg);}
+.admin-sidebar{background:var(--primary-dark); min-height:100vh; color:#fff;}
+.admin-sidebar a{color:#B9CCE0; display:flex; gap:.6rem; align-items:center; padding:.7rem 1rem; border-radius:8px; margin-bottom:.3rem;}
+.admin-sidebar a:hover, .admin-sidebar a.active{background:rgba(255,255,255,.1); color:#fff;}
+.notice-tag{font-size:.72rem; padding:.2rem .6rem; border-radius:20px; font-weight:700;}
+.tag-exam{background:#FDE8E8; color:#C0392B;} .tag-event{background:#E8F4FD; color:#1D6FA5;}
+.tag-general{background:#E9F7EE; color:#227A45;} .tag-admission{background:#FDF3E3; color:#B9770E;}
+[data-theme="dark"] .tag-exam{background:#3a1c1c;} [data-theme="dark"] .tag-event{background:#122b3a;}
+[data-theme="dark"] .tag-general{background:#123321;} [data-theme="dark"] .tag-admission{background:#3a2c12;}
+.chip-scroll{display:flex; gap:.6rem; overflow-x:auto; padding-bottom:.4rem;}
+.skip-link{position:absolute; left:-999px; top:0; background:#fff; padding:.6rem 1rem; z-index:9999;}
+.skip-link:focus{left:10px; top:10px;}
+
+/* Body font swap for Latin readability in English mode */
+body[data-lang="en"]{font-family:'Inter','Noto Sans Bengali',sans-serif;}
+body[data-lang="en"] h1,body[data-lang="en"] h2,body[data-lang="en"] h3,body[data-lang="en"] h4,body[data-lang="en"] h5,body[data-lang="en"] h6{font-family:'Inter','Hind Siliguri',sans-serif;}
+</style>
+</head>
+<body data-lang="bn">
+
+<a href="#mainContent" class="skip-link" data-i18n="skipLink">মূল বিষয়বস্তুতে যান</a>
+
+<div id="preloader">
+  <div class="loader-emblem"></div>
+  <p data-i18n="loading">লোড হচ্ছে... আথাকরা উচ্চ বিদ্যালয়</p>
+</div>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-school sticky-top">
+  <div class="container">
+    <a class="navbar-brand navbar-brand-school" href="#" data-page="home">
+      <div class="brand-mark"><i class="bi bi-mortarboard-fill"></i></div>
+      <div class="brand-text">
+        <div class="name" data-i18n="schoolName">আথাকরা উচ্চ বিদ্যালয়</div>
+        <div class="tagline" data-i18n="tagline">জ্ঞানের আলোয় আলোকিত ভবিষ্যৎ</div>
+      </div>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav mx-auto gap-1 my-2 my-lg-0">
+        <li class="nav-item"><a class="nav-link nav-link-school" href="#" data-page="home" data-i18n="navHome">হোম</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-school" href="#" data-page="about" data-i18n="navAbout">বিদ্যালয় পরিচিতি</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-school" href="#" data-page="academic" data-i18n="navAcademic">একাডেমিক</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-school" href="#" data-page="admission" data-i18n="navAdmission">ভর্তি</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-school" href="#" data-page="notice" data-i18n="navNotice">নোটিশ বোর্ড</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-school" href="#" data-page="gallery" data-i18n="navGallery">গ্যালারি</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-school" href="#" data-page="achievements" data-i18n="navAchievements">কৃতিত্ব</a></li>
+        <li class="nav-item"><a class="nav-link nav-link-school" href="#" data-page="contact" data-i18n="navContact">যোগাযোগ</a></li>
+      </ul>
+      <div class="d-flex align-items-center gap-2">
+        <!-- LANGUAGE SWITCHER: available to every visitor, on every page -->
+        <div class="dropdown">
+          <button class="icon-btn lang-switcher-btn dropdown-toggle" id="langSwitcherBtn" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Change language / ভাষা পরিবর্তন করুন" title="Change language / ভাষা পরিবর্তন করুন">
+            <i class="bi bi-translate"></i><span id="langSwitcherLabel">বাংলা</span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end" aria-label="Language options">
+            <li><button class="dropdown-item lang-option" data-lang="bn" type="button">🇧🇩&nbsp; বাংলা (Bangla)</button></li>
+            <li><button class="dropdown-item lang-option" data-lang="en" type="button">🇬🇧&nbsp; English</button></li>
+          </ul>
+        </div>
+        <button class="icon-btn" id="siteSearchBtn" aria-label="Search / অনুসন্ধান" title="Search / অনুসন্ধান"><i class="bi bi-search"></i></button>
+        <button class="icon-btn" id="darkModeToggle" aria-label="Dark mode / ডার্ক মোড" title="Dark mode / ডার্ক মোড"><i class="bi bi-moon-stars"></i></button>
+        <a href="#" class="icon-btn" data-page="admin-login" title="Admin panel / প্রশাসন প্যানেল"><i class="bi bi-shield-lock"></i></a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- SEARCH OVERLAY -->
+<div id="searchOverlay" style="display:none; position:fixed; inset:0; background:rgba(6,20,38,.7); z-index:2000; padding-top:8vh;">
+  <div class="container" style="max-width:640px;">
+    <div class="card-school p-3">
+      <div class="input-group">
+        <span class="input-group-text bg-transparent border-0"><i class="bi bi-search"></i></span>
+        <input type="text" id="globalSearchInput" class="form-control form-control-school border-0" data-i18n-ph="searchPlaceholder" placeholder="নোটিশ, পাতা বা বিষয় খুঁজুন...">
+        <button class="btn btn-outline-secondary border-0" id="closeSearchBtn"><i class="bi bi-x-lg"></i></button>
+      </div>
+      <div id="globalSearchResults" class="mt-3"></div>
+    </div>
+  </div>
+</div>
+
+<!-- NOTICE TICKER -->
+<div class="ticker-bar">
+  <div class="ticker-label"><i class="bi bi-megaphone-fill"></i> <span data-i18n="noticeWord">নোটিশ</span></div>
+  <div class="ticker-track-wrap"><div class="ticker-track" id="tickerTrack"></div></div>
+</div>
+
+<main id="mainContent">
+
+<!-- =================== HOME =================== -->
+<section class="page active" id="page-home">
+  <div class="hero">
+    <div class="hero-slide-bg show" style="background:linear-gradient(120deg,#062B57,#0A3D7A 60%,#1a6b45);"></div>
+    <div class="hero-slide-bg" style="background:linear-gradient(120deg,#0A3D7A,#1666C7 60%,#227A45);"></div>
+    <div class="hero-slide-bg" style="background:linear-gradient(120deg,#227A45,#0A3D7A 60%,#062B57);"></div>
+    <div class="container hero-content py-5">
+      <span class="hero-eyebrow"><i class="bi bi-award-fill"></i> <span data-i18n="heroEyebrow">প্রতিষ্ঠাকাল ১৯৮৫ • শিক্ষা বোর্ড অনুমোদিত</span></span>
+      <h1 data-i18n="heroTitle">আথাকরা উচ্চ বিদ্যালয়ে<br>স্বাগতম</h1>
+      <p class="lead-text" data-i18n="heroLead">নৈতিকতা, জ্ঞান ও দক্ষতার সমন্বয়ে আমরা গড়ে তুলছি আগামী দিনের যোগ্য নাগরিক। প্রায় চার দশক ধরে মানসম্মত শিক্ষা প্রদানে আমরা প্রতিশ্রুতিবদ্ধ।</p>
+      <div class="d-flex flex-wrap gap-3">
+        <a href="#" class="btn btn-school-primary" data-page="admission"><span data-i18n="ctaAdmission">ভর্তি তথ্য</span> <i class="bi bi-arrow-left ms-1"></i></a>
+        <a href="#" class="btn btn-school-outline" data-page="contact" data-i18n="ctaContact">যোগাযোগ করুন</a>
+      </div>
+    </div>
+    <div class="hero-dots">
+      <span class="hero-dot active" data-slide="0"></span><span class="hero-dot" data-slide="1"></span><span class="hero-dot" data-slide="2"></span>
+    </div>
+  </div>
+  <div class="nokshi-divider"></div>
+
+  <div class="container" style="margin-top:-34px; position:relative; z-index:5;">
+    <div class="date-widget flex-wrap">
+      <div class="icon-tile mb-0"><i class="bi bi-calendar3"></i></div>
+      <div>
+        <div class="fw-bold" id="dateWidgetText">...</div>
+        <div class="small" style="color:var(--text-soft)" data-i18n="officeHoursLine">বিদ্যালয় খোলা: রবি - বৃহস্পতিবার, সকাল ৮:০০ - দুপুর ২:৩০</div>
+      </div>
+      <div class="ms-auto d-flex gap-2 flex-wrap">
+        <span class="badge-cat badge rounded-pill px-3 py-2"><i class="bi bi-people-fill me-1"></i> <span data-i18n="admissionOngoing">ভর্তি চলছে</span></span>
+        <span class="badge-cat badge rounded-pill px-3 py-2"><i class="bi bi-file-earmark-text me-1"></i> <span data-i18n="routinePublished">রুটিন প্রকাশিত</span></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-pad">
+    <div class="container">
+      <div class="row g-4" id="statsRow">
+        <div class="col-6 col-md-3"><div class="stat-block card-school"><div class="stat-num" data-count="1240">0</div><div class="stat-label" data-i18n="statStudents">শিক্ষার্থী</div></div></div>
+        <div class="col-6 col-md-3"><div class="stat-block card-school"><div class="stat-num" data-count="58">0</div><div class="stat-label" data-i18n="statTeachers">শিক্ষক-শিক্ষিকা</div></div></div>
+        <div class="col-6 col-md-3"><div class="stat-block card-school"><div class="stat-num" data-count="39">0</div><div class="stat-label" data-i18n="statYears">বছরের অভিজ্ঞতা</div></div></div>
+        <div class="col-6 col-md-3"><div class="stat-block card-school"><div class="stat-num" data-count="98" data-suffix="%">0</div><div class="stat-label" data-i18n="statPassRate">পাসের হার</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-pad section-bg-alt">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-4 text-center">
+          <div class="avatar-circle mx-auto" data-i18n="principalInitials">অ.হ</div>
+          <h5 class="mt-3 mb-0" data-i18n="principalName">জনাব আব্দুল হাকিম</h5>
+          <div style="color:var(--accent-green); font-weight:600;" data-i18n="principalRole">প্রধান শিক্ষক</div>
+        </div>
+        <div class="col-lg-8">
+          <div class="section-eyebrow" data-i18n="principalEyebrow">প্রধান শিক্ষকের বাণী</div>
+          <h2 class="section-title" data-i18n="principalQuote">"শিক্ষাই জাতির মেরুদণ্ড"</h2>
+          <p class="section-sub" style="max-width:100%;" data-i18n="principalMsgShort">প্রিয় শিক্ষার্থী, অভিভাবক ও শুভানুধ্যায়ীবৃন্দ, আথাকরা উচ্চ বিদ্যালয়ের ওয়েবসাইটে আপনাদের স্বাগতম। আমরা বিশ্বাস করি, প্রতিটি শিক্ষার্থীর মধ্যে সুপ্ত প্রতিভা রয়েছে এবং সঠিক পরিচর্যায় তা বিকশিত হতে পারে। আমাদের লক্ষ্য শুধু পরীক্ষায় ভালো ফলাফল নয়, বরং নৈতিকতা, সৃজনশীলতা ও মানবিক মূল্যবোধসম্পন্ন একজন পূর্ণাঙ্গ মানুষ গড়ে তোলা। আসুন, আমরা একসাথে একটি উজ্জ্বল ভবিষ্যৎ গড়ি।</p>
+          <a href="#" class="fw-bold" style="color:var(--primary)" data-page="about"><span data-i18n="readMore">বিস্তারিত পড়ুন</span> <i class="bi bi-arrow-left"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-pad">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-7">
+          <div class="section-eyebrow" data-i18n="eyebrowRecentInfo">সাম্প্রতিক তথ্য</div>
+          <h2 class="section-title mb-4" data-i18n="latestNotices">সর্বশেষ নোটিশসমূহ</h2>
+          <div id="homeNoticeList" class="d-flex flex-column gap-3"></div>
+          <a href="#" class="btn btn-outline-primary mt-3 rounded-pill px-4" data-page="notice" data-i18n="viewAllNotices">সকল নোটিশ দেখুন</a>
+        </div>
+        <div class="col-lg-5">
+          <div class="section-eyebrow" data-i18n="eyebrowEvents">আয়োজন</div>
+          <h2 class="section-title mb-4" data-i18n="upcomingEvents">আসন্ন অনুষ্ঠানসমূহ</h2>
+          <div id="homeEventList" class="d-flex flex-column gap-3"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-pad section-bg-alt">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-end flex-wrap mb-4">
+        <div><div class="section-eyebrow" data-i18n="eyebrowPride">গর্বের মুহূর্ত</div><h2 class="section-title mb-0" data-i18n="specialAchievements">বিশেষ কৃতিত্বসমূহ</h2></div>
+        <a href="#" class="fw-bold" style="color:var(--primary)" data-page="achievements"><span data-i18n="viewAll">সব দেখুন</span> <i class="bi bi-arrow-left"></i></a>
+      </div>
+      <div class="row g-4" id="homeAchievements"></div>
+    </div>
+  </div>
+
+  <div class="section-pad">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-end flex-wrap mb-4">
+        <div><div class="section-eyebrow" data-i18n="eyebrowMemories">স্মৃতির পাতা</div><h2 class="section-title mb-0" data-i18n="photoGallery">ফটো গ্যালারি</h2></div>
+        <a href="#" class="fw-bold" style="color:var(--primary)" data-page="gallery"><span data-i18n="fullGallery">সম্পূর্ণ গ্যালারি</span> <i class="bi bi-arrow-left"></i></a>
+      </div>
+      <div class="row g-3" id="homeGalleryPreview"></div>
+    </div>
+  </div>
+
+  <div class="container mb-5">
+    <div class="p-5 rounded-4 text-center text-white" style="background:linear-gradient(120deg,var(--primary),var(--accent-green-dark));">
+      <h3 class="font-display mb-2" data-i18n="ctaBannerTitle">২০২৬ শিক্ষাবর্ষে ভর্তি চলছে</h3>
+      <p class="mb-4 opacity-75" data-i18n="ctaBannerSub">সীমিত আসন! আজই আবেদন করুন এবং আপনার সন্তানের উজ্জ্বল ভবিষ্যতের যাত্রা শুরু করুন।</p>
+      <div class="d-flex justify-content-center gap-3 flex-wrap">
+        <a href="#" class="btn btn-school-primary" data-page="admission" data-i18n="ctaAdmission">ভর্তি তথ্য</a>
+        <a href="#" class="btn btn-school-outline" data-page="contact" data-i18n="ctaContact">যোগাযোগ করুন</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== ABOUT =================== -->
+<section class="page" id="page-about">
+  <div class="section-pad" style="padding-top:3rem;">
+    <div class="container">
+      <div class="section-eyebrow" data-i18n="eyebrowAboutUs">আমাদের সম্পর্কে</div>
+      <h2 class="section-title" data-i18n="aboutTitle">বিদ্যালয় পরিচিতি</h2>
+      <p class="section-sub" data-i18n="aboutSub">১৯৮৫ সাল থেকে আথাকরা উচ্চ বিদ্যালয় মানসম্মত শিক্ষা প্রদানের মাধ্যমে অসংখ্য মেধাবী শিক্ষার্থী গড়ে তুলেছে।</p>
+
+      <div class="row g-5 mt-2 align-items-start">
+        <div class="col-lg-6">
+          <h4 class="mb-3"><i class="bi bi-clock-history me-2" style="color:var(--accent-green)"></i><span data-i18n="historyHeading">বিদ্যালয়ের ইতিহাস</span></h4>
+          <p style="color:var(--text-soft)" data-i18n="historyText">১৯৮৫ সালে স্থানীয় কয়েকজন শিক্ষানুরাগী ব্যক্তির উদ্যোগে আথাকরা উচ্চ বিদ্যালয়ের যাত্রা শুরু হয় মাত্র ৪৫ জন শিক্ষার্থী ও ৩ জন শিক্ষক নিয়ে। সময়ের সাথে সাথে বিদ্যালয়টি তার শিক্ষার মান, শৃঙ্খলা ও সহশিক্ষা কার্যক্রমের জন্য এলাকায় সুনাম অর্জন করে। বর্তমানে এই প্রতিষ্ঠানে ১২০০-এর অধিক শিক্ষার্থী অধ্যয়নরত এবং প্রতি বছর মাধ্যমিক পরীক্ষায় ধারাবাহিকভাবে ভালো ফলাফল অর্জন করে আসছে।</p>
+          <h4 class="mb-3 mt-4"><i class="bi bi-bullseye me-2" style="color:var(--accent-green)"></i><span data-i18n="goalsHeading">লক্ষ্য ও উদ্দেশ্য</span></h4>
+          <ul style="color:var(--text-soft)" id="goalsList"></ul>
+        </div>
+        <div class="col-lg-6">
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="card-school p-4">
+                <div class="icon-tile"><i class="bi bi-eye-fill"></i></div>
+                <h5 data-i18n="visionHeading">আমাদের ভিশন</h5>
+                <p style="color:var(--text-soft)" data-i18n="visionText">একটি আদর্শ শিক্ষা প্রতিষ্ঠান হিসেবে প্রতিষ্ঠিত হওয়া, যেখানে জ্ঞান, নৈতিকতা ও সৃজনশীলতার সমন্বয়ে গড়ে উঠবে আগামী দিনের দক্ষ নেতৃত্ব।</p>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card-school p-4">
+                <div class="icon-tile"><i class="bi bi-flag-fill"></i></div>
+                <h5 data-i18n="missionHeading">আমাদের মিশন</h5>
+                <p style="color:var(--text-soft)" data-i18n="missionText">মানসম্মত শিক্ষা উপকরণ, দক্ষ শিক্ষকমণ্ডলী ও সহায়ক পরিবেশের মাধ্যমে প্রতিটি শিক্ষার্থীর সর্বোচ্চ সম্ভাবনা বিকাশে সহযোগিতা করা।</p>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="card-school p-4">
+                <div class="icon-tile"><i class="bi bi-chat-quote-fill"></i></div>
+                <h5 data-i18n="principalFullHeading">প্রধান শিক্ষকের বাণী (সম্পূর্ণ)</h5>
+                <p style="color:var(--text-soft)" data-i18n="principalFullText">শিক্ষা শুধু বই মুখস্থ করা নয়, বরং জীবনের প্রতিটি ক্ষেত্রে প্রয়োগযোগ্য জ্ঞান অর্জনের প্রক্রিয়া। আমাদের বিদ্যালয়ে আমরা এই দর্শনে বিশ্বাসী। শিক্ষক, অভিভাবক ও শিক্ষার্থী — এই তিন পক্ষের সম্মিলিত প্রচেষ্টায় আমরা একটি সুন্দর শিক্ষা পরিবেশ গড়ে তুলতে বদ্ধপরিকর। — জনাব আব্দুল হাকিম, প্রধান শিক্ষক</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-pad section-bg-alt">
+    <div class="container">
+      <div class="section-eyebrow" data-i18n="eyebrowManagement">পরিচালনা</div>
+      <h2 class="section-title mb-4" data-i18n="committeeTitle">পরিচালনা কমিটি</h2>
+      <div class="row g-4" id="committeeList"></div>
+    </div>
+  </div>
+
+  <div class="section-pad">
+    <div class="container">
+      <div class="section-eyebrow" data-i18n="eyebrowFaculty">শিক্ষকমণ্ডলী</div>
+      <h2 class="section-title mb-4" data-i18n="staffTitle">আমাদের শিক্ষকবৃন্দ</h2>
+      <div class="row g-4" id="staffList"></div>
+    </div>
+  </div>
+
+  <div class="section-pad section-bg-alt">
+    <div class="container">
+      <div class="section-eyebrow" data-i18n="eyebrowInfrastructure">অবকাঠামো</div>
+      <h2 class="section-title mb-4" data-i18n="facilitiesTitle">বিদ্যালয়ের সুযোগ-সুবিধা</h2>
+      <div class="row g-4" id="facilityList"></div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== ACADEMIC =================== -->
+<section class="page" id="page-academic">
+  <div class="section-pad" style="padding-top:3rem;">
+    <div class="container">
+      <div class="section-eyebrow" data-i18n="eyebrowAcademicProg">শিক্ষা কার্যক্রম</div>
+      <h2 class="section-title" data-i18n="academicTitle">একাডেমিক তথ্যাদি</h2>
+      <p class="section-sub" data-i18n="academicSub">শ্রেণি, পাঠ্যক্রম, রুটিন ও ফলাফল সংক্রান্ত সকল তথ্য।</p>
+
+      <ul class="nav nav-pills gap-2 mb-4 mt-4" id="academicTabs">
+        <li class="nav-item"><button class="nav-link active" data-tab="classes" data-i18n="tabClasses">শ্রেণি ও পাঠ্যক্রম</button></li>
+        <li class="nav-item"><button class="nav-link" data-tab="classroutine" data-i18n="tabClassRoutine">ক্লাস রুটিন</button></li>
+        <li class="nav-item"><button class="nav-link" data-tab="examroutine" data-i18n="tabExamRoutine">পরীক্ষার রুটিন</button></li>
+        <li class="nav-item"><button class="nav-link" data-tab="calendar" data-i18n="tabCalendar">একাডেমিক ক্যালেন্ডার</button></li>
+        <li class="nav-item"><button class="nav-link" data-tab="results" data-i18n="tabResults">ফলাফল</button></li>
+      </ul>
+
+      <div class="academic-tab" id="tab-classes">
+        <div class="row g-4 mb-4">
+          <div class="col-md-3 col-6" data-class="6"><div class="card-school text-center p-4 class-card" style="cursor:pointer;"><div class="icon-tile mx-auto"><i class="bi bi-6-circle"></i></div><h5 class="mb-0" data-i18n="class6">ষষ্ঠ শ্রেণি</h5></div></div>
+          <div class="col-md-3 col-6" data-class="7"><div class="card-school text-center p-4 class-card" style="cursor:pointer;"><div class="icon-tile mx-auto"><i class="bi bi-7-circle"></i></div><h5 class="mb-0" data-i18n="class7">সপ্তম শ্রেণি</h5></div></div>
+          <div class="col-md-3 col-6" data-class="8"><div class="card-school text-center p-4 class-card" style="cursor:pointer;"><div class="icon-tile mx-auto"><i class="bi bi-8-circle"></i></div><h5 class="mb-0" data-i18n="class8">অষ্টম শ্রেণি</h5></div></div>
+          <div class="col-md-3 col-6" data-class="9-10"><div class="card-school text-center p-4 class-card" style="cursor:pointer;"><div class="icon-tile mx-auto"><i class="bi bi-9-square"></i></div><h5 class="mb-0" data-i18n="class910">নবম ও দশম শ্রেণি</h5></div></div>
+        </div>
+        <div class="accordion" id="subjectAccordion"></div>
+      </div>
+
+      <div class="academic-tab d-none" id="tab-classroutine">
+        <div class="table-responsive">
+          <table class="table table-school align-middle text-center">
+            <thead><tr id="classRoutineHead"></tr></thead>
+            <tbody id="classRoutineBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="academic-tab d-none" id="tab-examroutine">
+        <div class="table-responsive">
+          <table class="table table-school align-middle text-center">
+            <thead><tr id="examRoutineHead"></tr></thead>
+            <tbody id="examRoutineBody"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="academic-tab d-none" id="tab-calendar"><div class="row g-3" id="calendarList"></div></div>
+
+      <div class="academic-tab d-none" id="tab-results">
+        <div class="row g-3 mb-3">
+          <div class="col-md-4"><select class="form-select form-control-school" id="resultClassFilter"></select></div>
+          <div class="col-md-4"><select class="form-select form-control-school" id="resultYearFilter"></select></div>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-school align-middle text-center">
+            <thead><tr id="resultsHead"></tr></thead>
+            <tbody id="resultsBody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== ADMISSION =================== -->
+<section class="page" id="page-admission">
+  <div class="section-pad" style="padding-top:3rem;">
+    <div class="container">
+      <div class="section-eyebrow" data-i18n="eyebrowNewStudent">নতুন শিক্ষার্থী</div>
+      <h2 class="section-title" data-i18n="admissionTitle">ভর্তি তথ্য</h2>
+      <p class="section-sub" data-i18n="admissionSub">২০২৬ শিক্ষাবর্ষে ভর্তি সংক্রান্ত সকল প্রয়োজনীয় তথ্য নিচে দেওয়া হলো।</p>
+
+      <div class="row g-5 mt-3">
+        <div class="col-lg-7">
+          <h4 class="mb-4"><i class="bi bi-list-ol me-2" style="color:var(--accent-green)"></i><span data-i18n="processHeading">ভর্তি প্রক্রিয়া</span></h4>
+          <div id="admissionSteps"></div>
+
+          <h4 class="mb-3 mt-5"><i class="bi bi-file-earmark-check me-2" style="color:var(--accent-green)"></i><span data-i18n="documentsHeading">প্রয়োজনীয় কাগজপত্র</span></h4>
+          <ul style="color:var(--text-soft)" id="documentsList"></ul>
+        </div>
+
+        <div class="col-lg-5">
+          <div class="card-school p-4 mb-4">
+            <h5 class="mb-3"><i class="bi bi-calendar-event me-2" style="color:var(--accent-green)"></i><span data-i18n="importantDatesHeading">গুরুত্বপূর্ণ তারিখ</span></h5>
+            <table class="table table-sm mb-0" id="importantDatesTable"></table>
+          </div>
+          <div class="card-school p-4 mb-4">
+            <h5 class="mb-3"><i class="bi bi-cash-coin me-2" style="color:var(--accent-green)"></i><span data-i18n="feesHeading">ভর্তি ফি</span> <span class="badge-cat badge rounded-pill" data-i18n="editableBadge">সম্পাদনাযোগ্য</span></h5>
+            <table class="table table-sm mb-0" id="feesTable"></table>
+            <small style="color:var(--text-soft)" data-i18n="feesNote">* উল্লিখিত ফি প্লেসহোল্ডার হিসেবে দেওয়া হয়েছে, প্রশাসন প্যানেল থেকে হালনাগাদ করা যাবে।</small>
+          </div>
+          <div class="card-school p-4">
+            <h5 class="mb-3"><i class="bi bi-clipboard-check me-2" style="color:var(--accent-green)"></i><span data-i18n="eligibilityHeading">ভর্তির যোগ্যতা</span></h5>
+            <ul style="color:var(--text-soft)" class="mb-3" id="eligibilityList"></ul>
+            <button class="btn btn-school-primary w-100" id="downloadFormBtn"><i class="bi bi-download me-2"></i><span data-i18n="downloadFormBtn">ভর্তি ফরম ডাউনলোড করুন</span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== NOTICE BOARD =================== -->
+<section class="page" id="page-notice">
+  <div class="section-pad" style="padding-top:3rem;">
+    <div class="container">
+      <div class="section-eyebrow" data-i18n="eyebrowAllInfo">সকল তথ্য</div>
+      <h2 class="section-title" data-i18n="noticeBoardTitle">নোটিশ বোর্ড</h2>
+      <p class="section-sub" data-i18n="noticeBoardSub">বিদ্যালয়ের সকল বিজ্ঞপ্তি ও গুরুত্বপূর্ণ তথ্য এখানে প্রকাশ করা হয়।</p>
+
+      <div class="row g-3 align-items-center mt-3 mb-2">
+        <div class="col-md-6">
+          <div class="input-group">
+            <span class="input-group-text bg-transparent" style="border:1px solid var(--border); border-left:none; border-radius:0 10px 10px 0;"><i class="bi bi-search"></i></span>
+            <input type="text" id="noticeSearchInput" class="form-control form-control-school" style="border-radius:10px 0 0 10px;" data-i18n-ph="noticeSearchPlaceholder" placeholder="নোটিশ খুঁজুন...">
+          </div>
+        </div>
+        <div class="col-md-6"><div class="chip-scroll" id="noticeCategoryChips"></div></div>
+      </div>
+      <div class="d-flex flex-column gap-3 mt-3" id="fullNoticeList"></div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== GALLERY =================== -->
+<section class="page" id="page-gallery">
+  <div class="section-pad" style="padding-top:3rem;">
+    <div class="container">
+      <div class="section-eyebrow" data-i18n="eyebrowMemories">স্মৃতির পাতা</div>
+      <h2 class="section-title" data-i18n="galleryTitle">গ্যালারি</h2>
+      <p class="section-sub" data-i18n="gallerySub">বিদ্যালয়ের বিভিন্ন অনুষ্ঠান, খেলাধুলা ও সাংস্কৃতিক আয়োজনের ছবি ও ভিডিও।</p>
+
+      <ul class="nav nav-pills gap-2 my-4" id="galleryTabs">
+        <li class="nav-item"><button class="nav-link active" data-gtab="photo" data-i18n="gtabPhoto">ফটো গ্যালারি</button></li>
+        <li class="nav-item"><button class="nav-link" data-gtab="video" data-i18n="gtabVideo">ভিডিও গ্যালারি</button></li>
+        <li class="nav-item"><button class="nav-link" data-gtab="events" data-i18n="gtabEvents">বিদ্যালয় অনুষ্ঠান</button></li>
+        <li class="nav-item"><button class="nav-link" data-gtab="sports" data-i18n="gtabSports">বার্ষিক ক্রীড়া</button></li>
+        <li class="nav-item"><button class="nav-link" data-gtab="cultural" data-i18n="gtabCultural">সাংস্কৃতিক অনুষ্ঠান</button></li>
+      </ul>
+      <div class="row g-3" id="galleryGrid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== ACHIEVEMENTS =================== -->
+<section class="page" id="page-achievements">
+  <div class="section-pad" style="padding-top:3rem;">
+    <div class="container">
+      <div class="section-eyebrow" data-i18n="eyebrowPride">গর্বের মুহূর্ত</div>
+      <h2 class="section-title" data-i18n="achievementsTitle">কৃতিত্বসমূহ</h2>
+      <p class="section-sub" data-i18n="achievementsSub">আমাদের শিক্ষার্থী ও শিক্ষকদের অর্জিত সাফল্য ও পুরস্কারসমূহ।</p>
+
+      <ul class="nav nav-pills gap-2 my-4" id="achieveTabs">
+        <li class="nav-item"><button class="nav-link active" data-atab="student" data-i18n="atabStudent">শিক্ষার্থীদের কৃতিত্ব</button></li>
+        <li class="nav-item"><button class="nav-link" data-atab="teacher" data-i18n="atabTeacher">শিক্ষকদের কৃতিত্ব</button></li>
+        <li class="nav-item"><button class="nav-link" data-atab="awards" data-i18n="atabAwards">পুরস্কারসমূহ</button></li>
+        <li class="nav-item"><button class="nav-link" data-atab="competition" data-i18n="atabCompetition">প্রতিযোগিতার ফলাফল</button></li>
+      </ul>
+      <div class="row g-4" id="achieveGrid"></div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== CONTACT =================== -->
+<section class="page" id="page-contact">
+  <div class="section-pad" style="padding-top:3rem;">
+    <div class="container">
+      <div class="section-eyebrow" data-i18n="navContact">যোগাযোগ</div>
+      <h2 class="section-title" data-i18n="contactTitle">আমাদের সাথে যোগাযোগ করুন</h2>
+      <p class="section-sub" data-i18n="contactSub">যেকোনো তথ্য বা জিজ্ঞাসার জন্য নিচের ফর্ম পূরণ করুন অথবা সরাসরি যোগাযোগ করুন।</p>
+
+      <div class="row g-5 mt-3">
+        <div class="col-lg-5">
+          <div class="d-flex gap-3 mb-4"><div class="icon-tile flex-shrink-0"><i class="bi bi-geo-alt-fill"></i></div><div><h6 class="mb-1" data-i18n="addressLabel">ঠিকানা</h6><p style="color:var(--text-soft)" class="mb-0" data-i18n="addressValue">১২৩, গ্রীন রোড, ঢাকা - ১২০৫, বাংলাদেশ</p></div></div>
+          <div class="d-flex gap-3 mb-4"><div class="icon-tile flex-shrink-0"><i class="bi bi-telephone-fill"></i></div><div><h6 class="mb-1" data-i18n="phoneLabel">ফোন</h6><p style="color:var(--text-soft)" class="mb-0">+৮৮০ ১৭xx-xxxxxx</p></div></div>
+          <div class="d-flex gap-3 mb-4"><div class="icon-tile flex-shrink-0"><i class="bi bi-envelope-fill"></i></div><div><h6 class="mb-1" data-i18n="emailLabel">ইমেইল</h6><p style="color:var(--text-soft)" class="mb-0">info@athakarahighschool.edu.bd</p></div></div>
+          <div class="d-flex gap-3 mb-4"><div class="icon-tile flex-shrink-0"><i class="bi bi-clock-fill"></i></div><div><h6 class="mb-1" data-i18n="officeHoursLabel">অফিস সময়</h6><p style="color:var(--text-soft)" class="mb-0" data-i18n="officeHoursValue">রবি - বৃহস্পতিবার: সকাল ৮:০০ - দুপুর ২:৩০<br>শুক্র ও শনি: বন্ধ</p></div></div>
+          <div class="ratio ratio-4x3 rounded-4 overflow-hidden shadow-sm">
+            <iframe src="https://www.google.com/maps?q=Dhaka,Bangladesh&output=embed" style="border:0;" allowfullscreen loading="lazy" title="School location"></iframe>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="card-school p-4 mb-5">
+            <h5 class="mb-3" data-i18n="sendMessageHeading">বার্তা পাঠান</h5>
+            <form id="contactForm">
+              <div class="row g-3">
+                <div class="col-md-6"><input required class="form-control form-control-school" data-i18n-ph="phName" placeholder="আপনার নাম"></div>
+                <div class="col-md-6"><input required type="tel" class="form-control form-control-school" data-i18n-ph="phPhone" placeholder="মোবাইল নম্বর"></div>
+                <div class="col-12"><input required type="email" class="form-control form-control-school" data-i18n-ph="phEmail" placeholder="ইমেইল ঠিকানা"></div>
+                <div class="col-12"><input class="form-control form-control-school" data-i18n-ph="phSubject" placeholder="বিষয়"></div>
+                <div class="col-12"><textarea required rows="4" class="form-control form-control-school" data-i18n-ph="phMessage" placeholder="আপনার বার্তা লিখুন..."></textarea></div>
+                <div class="col-12"><button type="submit" class="btn btn-school-primary px-4"><span data-i18n="sendBtn">বার্তা পাঠান</span> <i class="bi bi-send ms-1"></i></button></div>
+              </div>
+              <div id="contactSuccessMsg" class="alert alert-success mt-3 d-none"><i class="bi bi-check-circle-fill me-2"></i><span data-i18n="contactSuccess">ধন্যবাদ! আপনার বার্তাটি সফলভাবে পাঠানো হয়েছে।</span></div>
+            </form>
+          </div>
+          <h5 class="mb-3" data-i18n="faqHeading">প্রায়শই জিজ্ঞাসিত প্রশ্ন (FAQ)</h5>
+          <div id="faqList" class="d-flex flex-column gap-2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== ADMIN LOGIN =================== -->
+<section class="page" id="page-admin-login">
+  <div class="d-flex align-items-center justify-content-center" style="min-height:80vh;">
+    <div class="card-school p-5" style="max-width:420px; width:100%;">
+      <div class="text-center mb-4">
+        <div class="icon-tile mx-auto" style="width:64px;height:64px; font-size:1.8rem;"><i class="bi bi-shield-lock-fill"></i></div>
+        <h4 class="mt-3 mb-0" data-i18n="adminPanelHeading">প্রশাসন প্যানেল</h4>
+        <small style="color:var(--text-soft)" data-i18n="adminPanelSub">শুধুমাত্র অনুমোদিত ব্যবহারকারীদের জন্য</small>
+      </div>
+      <form id="adminLoginForm">
+        <div class="mb-3"><label class="form-label" data-i18n="usernameLabel">ইউজারনেম</label><input class="form-control form-control-school" placeholder="admin" required></div>
+        <div class="mb-3"><label class="form-label" data-i18n="passwordLabel">পাসওয়ার্ড</label><input type="password" class="form-control form-control-school" placeholder="••••••••" required></div>
+        <button type="submit" class="btn btn-school-primary w-100" data-i18n="loginBtn">লগইন করুন</button>
+      </form>
+      <div class="alert alert-warning mt-3 mb-0 small"><i class="bi bi-info-circle me-1"></i> <span data-i18n="adminDemoNote">এটি একটি ডেমো ইন্টারফেস। প্রকৃত ব্যবহারের জন্য নিরাপদ সার্ভার-সাইড অথেন্টিকেশন যুক্ত করতে হবে।</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== ADMIN DASHBOARD =================== -->
+<section class="page" id="page-admin-dashboard">
+  <div class="row g-0">
+    <div class="col-lg-2 admin-sidebar p-3">
+      <h6 class="text-white mb-4"><i class="bi bi-speedometer2 me-2"></i><span data-i18n="dashboardHeading">ড্যাশবোর্ড</span></h6>
+      <a href="#" class="active admin-nav" data-atab2="notices"><i class="bi bi-megaphone"></i> <span data-i18n="sideNotices">নোটিশ ব্যবস্থাপনা</span></a>
+      <a href="#" class="admin-nav" data-atab2="gallery"><i class="bi bi-images"></i> <span data-i18n="sideGallery">গ্যালারি ব্যবস্থাপনা</span></a>
+      <a href="#" class="admin-nav" data-atab2="events"><i class="bi bi-calendar-event"></i> <span data-i18n="sideEvents">ইভেন্ট ব্যবস্থাপনা</span></a>
+      <a href="#" class="admin-nav" data-atab2="info"><i class="bi bi-gear"></i> <span data-i18n="sideInfo">স্কুল তথ্য হালনাগাদ</span></a>
+      <hr style="border-color:rgba(255,255,255,.15)">
+      <a href="#" data-page="home"><i class="bi bi-box-arrow-left"></i> <span data-i18n="logout">লগ-আউট</span></a>
+    </div>
+    <div class="col-lg-10 p-4">
+      <div class="admin-tab" id="admintab-notices">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h5 class="mb-0" data-i18n="sideNotices">নোটিশ ব্যবস্থাপনা</h5>
+          <button class="btn btn-school-primary btn-sm" id="addNoticeBtn"><i class="bi bi-plus-lg me-1"></i><span data-i18n="addNoticeBtn">নতুন নোটিশ যোগ করুন</span></button>
+        </div>
+        <div class="card-school p-3 mb-3 d-none" id="noticeFormCard">
+          <div class="row g-2">
+            <div class="col-md-6"><input class="form-control form-control-school" id="newNoticeTitle" data-i18n-ph="newNoticePh" placeholder="নোটিশের শিরোনাম"></div>
+            <div class="col-md-3"><select class="form-select form-control-school" id="newNoticeCat"></select></div>
+            <div class="col-md-3"><button class="btn btn-school-primary w-100" id="saveNoticeBtn" data-i18n="saveBtn">সংরক্ষণ করুন</button></div>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-school align-middle">
+            <thead><tr id="adminNoticeHead"></tr></thead>
+            <tbody id="adminNoticeTable"></tbody>
+          </table>
+        </div>
+      </div>
+      <div class="admin-tab d-none" id="admintab-gallery">
+        <h5 class="mb-3" data-i18n="sideGallery">গ্যালারি ব্যবস্থাপনা</h5>
+        <div class="card-school p-4 text-center" style="border-style:dashed;">
+          <i class="bi bi-cloud-upload fs-1" style="color:var(--accent-green)"></i>
+          <p class="mt-2 mb-0" style="color:var(--text-soft)" data-i18n="uploadHint">ছবি বা ভিডিও আপলোড করতে এখানে ক্লিক করুন অথবা টেনে আনুন (ডেমো)</p>
+        </div>
+      </div>
+      <div class="admin-tab d-none" id="admintab-events">
+        <h5 class="mb-3" data-i18n="sideEvents">ইভেন্ট ব্যবস্থাপনা</h5>
+        <p style="color:var(--text-soft)" data-i18n="eventsHint">এখান থেকে আসন্ন অনুষ্ঠানসমূহ যোগ, সম্পাদনা বা মুছে ফেলা যাবে (ডেমো ইন্টারফেস)।</p>
+      </div>
+      <div class="admin-tab d-none" id="admintab-info">
+        <h5 class="mb-3" data-i18n="sideInfo">স্কুল তথ্য হালনাগাদ</h5>
+        <div class="row g-3">
+          <div class="col-md-6"><label class="form-label" data-i18n="schoolNameLabel">বিদ্যালয়ের নাম</label><input class="form-control form-control-school" value="আথাকরা উচ্চ বিদ্যালয়"></div>
+          <div class="col-md-6"><label class="form-label" data-i18n="taglineLabel">স্লোগান</label><input class="form-control form-control-school" value="জ্ঞানের আলোয় আলোকিত ভবিষ্যৎ"></div>
+          <div class="col-md-6"><label class="form-label" data-i18n="phoneLabel">ফোন</label><input class="form-control form-control-school" value="+৮৮০ ১৭xx-xxxxxx"></div>
+          <div class="col-md-6"><label class="form-label" data-i18n="emailLabel">ইমেইল</label><input class="form-control form-control-school" value="info@athakarahighschool.edu.bd"></div>
+          <div class="col-12"><button class="btn btn-school-primary" data-i18n="saveChangesBtn">পরিবর্তন সংরক্ষণ করুন</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container pb-4">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="d-flex align-items-center gap-2 mb-3">
+          <div class="brand-mark"><i class="bi bi-mortarboard-fill"></i></div>
+          <div><div class="fw-bold text-white font-display" data-i18n="schoolName">আথাকরা উচ্চ বিদ্যালয়</div><small style="color:var(--accent-green)" data-i18n="tagline">জ্ঞানের আলোয় আলোকিত ভবিষ্যৎ</small></div>
+        </div>
+        <p class="small" data-i18n="footerAbout">১৯৮৫ সাল থেকে মানসম্মত শিক্ষার মাধ্যমে আগামী দিনের দক্ষ নাগরিক গড়ে তোলার প্রয়াসে আমরা প্রতিশ্রুতিবদ্ধ।</p>
+        <div class="d-flex gap-2 mt-3">
+          <a href="#" class="social-circle"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="social-circle"><i class="bi bi-youtube"></i></a>
+          <a href="#" class="social-circle"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="social-circle"><i class="bi bi-envelope"></i></a>
+        </div>
+      </div>
+      <div class="col-lg-2 col-6">
+        <h6 data-i18n="quickLinksHeading">দ্রুত লিংক</h6>
+        <ul class="list-unstyled small d-flex flex-column gap-2">
+          <li><a href="#" data-page="about" data-i18n="navAbout">বিদ্যালয় পরিচিতি</a></li>
+          <li><a href="#" data-page="academic" data-i18n="navAcademic">একাডেমিক</a></li>
+          <li><a href="#" data-page="admission" data-i18n="navAdmission">ভর্তি তথ্য</a></li>
+          <li><a href="#" data-page="notice" data-i18n="navNotice">নোটিশ বোর্ড</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-2 col-6">
+        <h6 data-i18n="moreHeading">আরও</h6>
+        <ul class="list-unstyled small d-flex flex-column gap-2">
+          <li><a href="#" data-page="gallery" data-i18n="navGallery">গ্যালারি</a></li>
+          <li><a href="#" data-page="achievements" data-i18n="navAchievements">কৃতিত্ব</a></li>
+          <li><a href="#" data-page="contact" data-i18n="navContact">যোগাযোগ</a></li>
+          <li><a href="#" data-page="admin-login" data-i18n="adminPanelHeading">প্রশাসন প্যানেল</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4">
+        <h6 data-i18n="navContact">যোগাযোগ</h6>
+        <ul class="list-unstyled small d-flex flex-column gap-2">
+          <li><i class="bi bi-geo-alt me-2"></i><span data-i18n="addressValue">১২৩, গ্রীন রোড, ঢাকা - ১২০৫</span></li>
+          <li><i class="bi bi-telephone me-2"></i>+৮৮০ ১৭xx-xxxxxx</li>
+          <li><i class="bi bi-envelope me-2"></i>info@athakarahighschool.edu.bd</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="text-center py-3 small" style="background:rgba(0,0,0,.15);"><span data-i18n="copyrightText">© ২০২৬ আথাকরা উচ্চ বিদ্যালয়। সর্বস্বত্ব সংরক্ষিত।</span></div>
+</footer>
+
+<button id="backToTop" aria-label="Back to top / উপরে যান"><i class="bi bi-arrow-up"></i></button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script>
+/* ==================================================================
+   LANGUAGE STATE (in-memory only; no persistent storage in artifacts)
+   ================================================================== */
+let currentLang = 'bn';
+
+const banglaDigits = {'0':'০','1':'১','2':'২','3':'৩','4':'৪','5':'৫','6':'৬','7':'৭','8':'৮','9':'৯'};
+function toBanglaNum(n){ return String(n).split('').map(c=>banglaDigits[c]!==undefined?banglaDigits[c]:c).join(''); }
+function fmtNum(n){ return currentLang==='bn' ? toBanglaNum(n) : String(n); }
+
+const banglaMonths = ["জানুয়ারি","ফেব্রুয়ারি","মার্চ","এপ্রিল","মে","জুন","জুলাই","আগস্ট","সেপ্টেম্বর","অক্টোবর","নভেম্বর","ডিসেম্বর"];
+const englishMonths = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+const banglaDays = ["রবিবার","সোমবার","মঙ্গলবার","বুধবার","বৃহস্পতিবার","শুক্রবার","শনিবার"];
+const englishDays = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+/* ==================================================================
+   UI TEXT DICTIONARY
+   ================================================================== */
+const I18N = {
+  skipLink:{bn:"মূল বিষয়বস্তুতে যান", en:"Skip to main content"},
+  loading:{bn:"লোড হচ্ছে... আথাকরা উচ্চ বিদ্যালয়", en:"Loading... Athakara High School"},
+  schoolName:{bn:"আথাকরা উচ্চ বিদ্যালয়", en:"Athakara High School"},
+  tagline:{bn:"জ্ঞানের আলোয় আলোকিত ভবিষ্যৎ", en:"A Future Illuminated by Knowledge"},
+  navHome:{bn:"হোম", en:"Home"}, navAbout:{bn:"বিদ্যালয় পরিচিতি", en:"About"}, navAcademic:{bn:"একাডেমিক", en:"Academic"},
+  navAdmission:{bn:"ভর্তি", en:"Admission"}, navNotice:{bn:"নোটিশ বোর্ড", en:"Notice Board"}, navGallery:{bn:"গ্যালারি", en:"Gallery"},
+  navAchievements:{bn:"কৃতিত্ব", en:"Achievements"}, navContact:{bn:"যোগাযোগ", en:"Contact"},
+  searchPlaceholder:{bn:"নোটিশ, পাতা বা বিষয় খুঁজুন...", en:"Search notices, pages or topics..."},
+  noticeWord:{bn:"নোটিশ", en:"Notice"},
+  heroEyebrow:{bn:"প্রতিষ্ঠাকাল ১৯৮৫ • শিক্ষা বোর্ড অনুমোদিত", en:"Established 1985 • Board Approved"},
+  heroTitle:{bn:"আথাকরা উচ্চ বিদ্যালয়ে<br>স্বাগতম", en:"Welcome to<br>Athakara High School"},
+  heroLead:{bn:"নৈতিকতা, জ্ঞান ও দক্ষতার সমন্বয়ে আমরা গড়ে তুলছি আগামী দিনের যোগ্য নাগরিক। প্রায় চার দশক ধরে মানসম্মত শিক্ষা প্রদানে আমরা প্রতিশ্রুতিবদ্ধ।",
+    en:"We shape tomorrow's capable citizens through a balance of ethics, knowledge and skill. For nearly four decades we have been committed to quality education."},
+  ctaAdmission:{bn:"ভর্তি তথ্য", en:"Admission Info"}, ctaContact:{bn:"যোগাযোগ করুন", en:"Contact Us"},
+  officeHoursLine:{bn:"বিদ্যালয় খোলা: রবি - বৃহস্পতিবার, সকাল ৮:০০ - দুপুর ২:৩০", en:"School hours: Sun - Thu, 8:00 AM - 2:30 PM"},
+  admissionOngoing:{bn:"ভর্তি চলছে", en:"Admission Open"}, routinePublished:{bn:"রুটিন প্রকাশিত", en:"Routine Published"},
+  statStudents:{bn:"শিক্ষার্থী", en:"Students"}, statTeachers:{bn:"শিক্ষক-শিক্ষিকা", en:"Teachers"},
+  statYears:{bn:"বছরের অভিজ্ঞতা", en:"Years of Excellence"}, statPassRate:{bn:"পাসের হার", en:"Pass Rate"},
+  principalInitials:{bn:"অ.হ", en:"A.H"}, principalName:{bn:"জনাব আব্দুল হাকিম", en:"Mr. Abdul Hakim"}, principalRole:{bn:"প্রধান শিক্ষক", en:"Headmaster"},
+  principalEyebrow:{bn:"প্রধান শিক্ষকের বাণী", en:"Message from the Principal"},
+  principalQuote:{bn:'"শিক্ষাই জাতির মেরুদণ্ড"', en:'"Education is the backbone of a nation"'},
+  principalMsgShort:{bn:"প্রিয় শিক্ষার্থী, অভিভাবক ও শুভানুধ্যায়ীবৃন্দ, আথাকরা উচ্চ বিদ্যালয়ের ওয়েবসাইটে আপনাদের স্বাগতম। আমরা বিশ্বাস করি, প্রতিটি শিক্ষার্থীর মধ্যে সুপ্ত প্রতিভা রয়েছে এবং সঠিক পরিচর্যায় তা বিকশিত হতে পারে। আমাদের লক্ষ্য শুধু পরীক্ষায় ভালো ফলাফল নয়, বরং নৈতিকতা, সৃজনশীলতা ও মানবিক মূল্যবোধসম্পন্ন একজন পূর্ণাঙ্গ মানুষ গড়ে তোলা। আসুন, আমরা একসাথে একটি উজ্জ্বল ভবিষ্যৎ গড়ি।",
+    en:"Dear students, parents and well-wishers, welcome to the Athakara High School website. We believe every student carries hidden potential that can flourish with the right guidance. Our goal is not only strong exam results but raising complete individuals with ethics, creativity and human values. Let us build a bright future together."},
+  readMore:{bn:"বিস্তারিত পড়ুন", en:"Read More"},
+  eyebrowRecentInfo:{bn:"সাম্প্রতিক তথ্য", en:"Recent Updates"}, latestNotices:{bn:"সর্বশেষ নোটিশসমূহ", en:"Latest Notices"},
+  eyebrowEvents:{bn:"আয়োজন", en:"Upcoming"}, upcomingEvents:{bn:"আসন্ন অনুষ্ঠানসমূহ", en:"Upcoming Events"},
+  viewAllNotices:{bn:"সকল নোটিশ দেখুন", en:"View All Notices"},
+  eyebrowPride:{bn:"গর্বের মুহূর্ত", en:"Proud Moments"}, specialAchievements:{bn:"বিশেষ কৃতিত্বসমূহ", en:"Featured Achievements"},
+  viewAll:{bn:"সব দেখুন", en:"View All"},
+  eyebrowMemories:{bn:"স্মৃতির পাতা", en:"Memory Lane"}, photoGallery:{bn:"ফটো গ্যালারি", en:"Photo Gallery"}, fullGallery:{bn:"সম্পূর্ণ গ্যালারি", en:"Full Gallery"},
+  ctaBannerTitle:{bn:"২০২৬ শিক্ষাবর্ষে ভর্তি চলছে", en:"Admissions Open for 2026"},
+  ctaBannerSub:{bn:"সীমিত আসন! আজই আবেদন করুন এবং আপনার সন্তানের উজ্জ্বল ভবিষ্যতের যাত্রা শুরু করুন।", en:"Limited seats! Apply today and start your child's journey toward a bright future."},
+  eyebrowAboutUs:{bn:"আমাদের সম্পর্কে", en:"About Us"}, aboutTitle:{bn:"বিদ্যালয় পরিচিতি", en:"About the School"},
+  aboutSub:{bn:"১৯৮৫ সাল থেকে আথাকরা উচ্চ বিদ্যালয় মানসম্মত শিক্ষা প্রদানের মাধ্যমে অসংখ্য মেধাবী শিক্ষার্থী গড়ে তুলেছে।", en:"Since 1985, Athakara High School has nurtured countless talented students through quality education."},
+  historyHeading:{bn:"বিদ্যালয়ের ইতিহাস", en:"School History"},
+  historyText:{bn:"১৯৮৫ সালে স্থানীয় কয়েকজন শিক্ষানুরাগী ব্যক্তির উদ্যোগে আথাকরা উচ্চ বিদ্যালয়ের যাত্রা শুরু হয় মাত্র ৪৫ জন শিক্ষার্থী ও ৩ জন শিক্ষক নিয়ে। সময়ের সাথে সাথে বিদ্যালয়টি তার শিক্ষার মান, শৃঙ্খলা ও সহশিক্ষা কার্যক্রমের জন্য এলাকায় সুনাম অর্জন করে। বর্তমানে এই প্রতিষ্ঠানে ১২০০-এর অধিক শিক্ষার্থী অধ্যয়নরত এবং প্রতি বছর মাধ্যমিক পরীক্ষায় ধারাবাহিকভাবে ভালো ফলাফল অর্জন করে আসছে।",
+    en:"Athakara High School was founded in 1985 by a group of local education enthusiasts, starting with just 45 students and 3 teachers. Over time the school earned a strong reputation for academic standards, discipline and co-curricular activities. Today it educates over 1,200 students and consistently achieves strong results in the secondary examinations each year."},
+  goalsHeading:{bn:"লক্ষ্য ও উদ্দেশ্য", en:"Goals & Objectives"},
+  visionHeading:{bn:"আমাদের ভিশন", en:"Our Vision"},
+  visionText:{bn:"একটি আদর্শ শিক্ষা প্রতিষ্ঠান হিসেবে প্রতিষ্ঠিত হওয়া, যেখানে জ্ঞান, নৈতিকতা ও সৃজনশীলতার সমন্বয়ে গড়ে উঠবে আগামী দিনের দক্ষ নেতৃত্ব।",
+    en:"To be established as a model educational institution where knowledge, ethics and creativity combine to build tomorrow's capable leadership."},
+  missionHeading:{bn:"আমাদের মিশন", en:"Our Mission"},
+  missionText:{bn:"মানসম্মত শিক্ষা উপকরণ, দক্ষ শিক্ষকমণ্ডলী ও সহায়ক পরিবেশের মাধ্যমে প্রতিটি শিক্ষার্থীর সর্বোচ্চ সম্ভাবনা বিকাশে সহযোগিতা করা।",
+    en:"To support every student in reaching their fullest potential through quality learning resources, skilled teachers and a supportive environment."},
+  principalFullHeading:{bn:"প্রধান শিক্ষকের বাণী (সম্পূর্ণ)", en:"Principal's Message (Full)"},
+  principalFullText:{bn:"শিক্ষা শুধু বই মুখস্থ করা নয়, বরং জীবনের প্রতিটি ক্ষেত্রে প্রয়োগযোগ্য জ্ঞান অর্জনের প্রক্রিয়া। আমাদের বিদ্যালয়ে আমরা এই দর্শনে বিশ্বাসী। শিক্ষক, অভিভাবক ও শিক্ষার্থী — এই তিন পক্ষের সম্মিলিত প্রচেষ্টায় আমরা একটি সুন্দর শিক্ষা পরিবেশ গড়ে তুলতে বদ্ধপরিকর। — জনাব আব্দুল হাকিম, প্রধান শিক্ষক",
+    en:"Education is not just memorizing books — it is the process of gaining knowledge applicable to every part of life. We believe in this philosophy at our school. Through the combined effort of teachers, parents and students, we are committed to building a wonderful learning environment. — Mr. Abdul Hakim, Headmaster"},
+  eyebrowManagement:{bn:"পরিচালনা", en:"Governance"}, committeeTitle:{bn:"পরিচালনা কমিটি", en:"Managing Committee"},
+  eyebrowFaculty:{bn:"শিক্ষকমণ্ডলী", en:"Faculty"}, staffTitle:{bn:"আমাদের শিক্ষকবৃন্দ", en:"Our Teaching Staff"},
+  eyebrowInfrastructure:{bn:"অবকাঠামো", en:"Infrastructure"}, facilitiesTitle:{bn:"বিদ্যালয়ের সুযোগ-সুবিধা", en:"School Facilities"},
+  eyebrowAcademicProg:{bn:"শিক্ষা কার্যক্রম", en:"Academic Programme"}, academicTitle:{bn:"একাডেমিক তথ্যাদি", en:"Academic Information"},
+  academicSub:{bn:"শ্রেণি, পাঠ্যক্রম, রুটিন ও ফলাফল সংক্রান্ত সকল তথ্য।", en:"Everything about classes, curriculum, routines and results."},
+  tabClasses:{bn:"শ্রেণি ও পাঠ্যক্রম", en:"Classes & Curriculum"}, tabClassRoutine:{bn:"ক্লাস রুটিন", en:"Class Routine"},
+  tabExamRoutine:{bn:"পরীক্ষার রুটিন", en:"Exam Routine"}, tabCalendar:{bn:"একাডেমিক ক্যালেন্ডার", en:"Academic Calendar"}, tabResults:{bn:"ফলাফল", en:"Results"},
+  class6:{bn:"ষষ্ঠ শ্রেণি", en:"Class 6"}, class7:{bn:"সপ্তম শ্রেণি", en:"Class 7"}, class8:{bn:"অষ্টম শ্রেণি", en:"Class 8"}, class910:{bn:"নবম ও দশম শ্রেণি", en:"Class 9 & 10"},
+  eyebrowNewStudent:{bn:"নতুন শিক্ষার্থী", en:"New Students"}, admissionTitle:{bn:"ভর্তি তথ্য", en:"Admission Information"},
+  admissionSub:{bn:"২০২৬ শিক্ষাবর্ষে ভর্তি সংক্রান্ত সকল প্রয়োজনীয় তথ্য নিচে দেওয়া হলো।", en:"All the information you need about admissions for the 2026 academic year."},
+  processHeading:{bn:"ভর্তি প্রক্রিয়া", en:"Admission Process"}, documentsHeading:{bn:"প্রয়োজনীয় কাগজপত্র", en:"Required Documents"},
+  importantDatesHeading:{bn:"গুরুত্বপূর্ণ তারিখ", en:"Important Dates"}, feesHeading:{bn:"ভর্তি ফি", en:"Admission Fees"},
+  editableBadge:{bn:"সম্পাদনাযোগ্য", en:"Editable"},
+  feesNote:{bn:"* উল্লিখিত ফি প্লেসহোল্ডার হিসেবে দেওয়া হয়েছে, প্রশাসন প্যানেল থেকে হালনাগাদ করা যাবে।", en:"* Fees shown are placeholders and can be updated from the admin panel."},
+  eligibilityHeading:{bn:"ভর্তির যোগ্যতা", en:"Eligibility"}, downloadFormBtn:{bn:"ভর্তি ফরম ডাউনলোড করুন", en:"Download Admission Form"},
+  eyebrowAllInfo:{bn:"সকল তথ্য", en:"All Notices"}, noticeBoardTitle:{bn:"নোটিশ বোর্ড", en:"Notice Board"},
+  noticeBoardSub:{bn:"বিদ্যালয়ের সকল বিজ্ঞপ্তি ও গুরুত্বপূর্ণ তথ্য এখানে প্রকাশ করা হয়।", en:"All school notices and important announcements are published here."},
+  noticeSearchPlaceholder:{bn:"নোটিশ খুঁজুন...", en:"Search notices..."},
+  galleryTitle:{bn:"গ্যালারি", en:"Gallery"}, gallerySub:{bn:"বিদ্যালয়ের বিভিন্ন অনুষ্ঠান, খেলাধুলা ও সাংস্কৃতিক আয়োজনের ছবি ও ভিডিও।", en:"Photos and videos from school events, sports and cultural programs."},
+  gtabPhoto:{bn:"ফটো গ্যালারি", en:"Photo Gallery"}, gtabVideo:{bn:"ভিডিও গ্যালারি", en:"Video Gallery"}, gtabEvents:{bn:"বিদ্যালয় অনুষ্ঠান", en:"School Events"},
+  gtabSports:{bn:"বার্ষিক ক্রীড়া", en:"Annual Sports"}, gtabCultural:{bn:"সাংস্কৃতিক অনুষ্ঠান", en:"Cultural Programs"},
+  achievementsTitle:{bn:"কৃতিত্বসমূহ", en:"Achievements"}, achievementsSub:{bn:"আমাদের শিক্ষার্থী ও শিক্ষকদের অর্জিত সাফল্য ও পুরস্কারসমূহ।", en:"Successes and awards earned by our students and teachers."},
+  atabStudent:{bn:"শিক্ষার্থীদের কৃতিত্ব", en:"Student Achievements"}, atabTeacher:{bn:"শিক্ষকদের কৃতিত্ব", en:"Teacher Achievements"},
+  atabAwards:{bn:"পুরস্কারসমূহ", en:"Awards"}, atabCompetition:{bn:"প্রতিযোগিতার ফলাফল", en:"Competition Results"},
+  contactTitle:{bn:"আমাদের সাথে যোগাযোগ করুন", en:"Get in Touch"}, contactSub:{bn:"যেকোনো তথ্য বা জিজ্ঞাসার জন্য নিচের ফর্ম পূরণ করুন অথবা সরাসরি যোগাযোগ করুন।", en:"Fill out the form below for any query, or reach us directly."},
+  addressLabel:{bn:"ঠিকানা", en:"Address"}, addressValue:{bn:"১২৩, গ্রীন রোড, ঢাকা - ১২০৫, বাংলাদেশ", en:"123, Green Road, Dhaka - 1205, Bangladesh"},
+  phoneLabel:{bn:"ফোন", en:"Phone"}, emailLabel:{bn:"ইমেইল", en:"Email"},
+  officeHoursLabel:{bn:"অফিস সময়", en:"Office Hours"}, officeHoursValue:{bn:"রবি - বৃহস্পতিবার: সকাল ৮:০০ - দুপুর ২:৩০<br>শুক্র ও শনি: বন্ধ", en:"Sun - Thu: 8:00 AM - 2:30 PM<br>Friday & Saturday: Closed"},
+  sendMessageHeading:{bn:"বার্তা পাঠান", en:"Send a Message"},
+  phName:{bn:"আপনার নাম", en:"Your Name"}, phPhone:{bn:"মোবাইল নম্বর", en:"Mobile Number"}, phEmail:{bn:"ইমেইল ঠিকানা", en:"Email Address"},
+  phSubject:{bn:"বিষয়", en:"Subject"}, phMessage:{bn:"আপনার বার্তা লিখুন...", en:"Write your message..."},
+  sendBtn:{bn:"বার্তা পাঠান", en:"Send Message"}, contactSuccess:{bn:"ধন্যবাদ! আপনার বার্তাটি সফলভাবে পাঠানো হয়েছে।", en:"Thank you! Your message has been sent successfully."},
+  faqHeading:{bn:"প্রায়শই জিজ্ঞাসিত প্রশ্ন (FAQ)", en:"Frequently Asked Questions (FAQ)"},
+  adminPanelHeading:{bn:"প্রশাসন প্যানেল", en:"Admin Panel"}, adminPanelSub:{bn:"শুধুমাত্র অনুমোদিত ব্যবহারকারীদের জন্য", en:"Authorized users only"},
+  usernameLabel:{bn:"ইউজারনেম", en:"Username"}, passwordLabel:{bn:"পাসওয়ার্ড", en:"Password"}, loginBtn:{bn:"লগইন করুন", en:"Log In"},
+  adminDemoNote:{bn:"এটি একটি ডেমো ইন্টারফেস। প্রকৃত ব্যবহারের জন্য নিরাপদ সার্ভার-সাইড অথেন্টিকেশন যুক্ত করতে হবে।", en:"This is a demo interface. Secure server-side authentication is required for real-world use."},
+  dashboardHeading:{bn:"ড্যাশবোর্ড", en:"Dashboard"},
+  sideNotices:{bn:"নোটিশ ব্যবস্থাপনা", en:"Manage Notices"}, sideGallery:{bn:"গ্যালারি ব্যবস্থাপনা", en:"Manage Gallery"},
+  sideEvents:{bn:"ইভেন্ট ব্যবস্থাপনা", en:"Manage Events"}, sideInfo:{bn:"স্কুল তথ্য হালনাগাদ", en:"Update School Info"}, logout:{bn:"লগ-আউট", en:"Log Out"},
+  addNoticeBtn:{bn:"নতুন নোটিশ যোগ করুন", en:"Add New Notice"}, newNoticePh:{bn:"নোটিশের শিরোনাম", en:"Notice title"}, saveBtn:{bn:"সংরক্ষণ করুন", en:"Save"},
+  uploadHint:{bn:"ছবি বা ভিডিও আপলোড করতে এখানে ক্লিক করুন অথবা টেনে আনুন (ডেমো)", en:"Click here or drag & drop to upload photos or videos (demo)"},
+  eventsHint:{bn:"এখান থেকে আসন্ন অনুষ্ঠানসমূহ যোগ, সম্পাদনা বা মুছে ফেলা যাবে (ডেমো ইন্টারফেস)।", en:"Add, edit or remove upcoming events from here (demo interface)."},
+  schoolNameLabel:{bn:"বিদ্যালয়ের নাম", en:"School Name"}, taglineLabel:{bn:"স্লোগান", en:"Tagline"}, saveChangesBtn:{bn:"পরিবর্তন সংরক্ষণ করুন", en:"Save Changes"},
+  quickLinksHeading:{bn:"দ্রুত লিংক", en:"Quick Links"}, moreHeading:{bn:"আরও", en:"More"},
+  footerAbout:{bn:"১৯৮৫ সাল থেকে মানসম্মত শিক্ষার মাধ্যমে আগামী দিনের দক্ষ নাগরিক গড়ে তোলার প্রয়াসে আমরা প্রতিশ্রুতিবদ্ধ।", en:"Since 1985 we have been committed to raising capable future citizens through quality education."},
+  copyrightText:{bn:"© ২০২৬ আথাকরা উচ্চ বিদ্যালয়। সর্বস্বত্ব সংরক্ষিত।", en:"© 2026 Athakara High School. All rights reserved."},
+  noResults:{bn:"কোনো ফলাফল পাওয়া যায়নি।", en:"No results found."},
+  allCategory:{bn:"সব", en:"All"}, allClasses:{bn:"সকল শ্রেণি", en:"All Classes"}, allYears:{bn:"সকল বছর", en:"All Years"},
+  timeCol:{bn:"সময়", en:"Time"}, subjectCol:{bn:"বিষয়", en:"Subject"}, classCol:{bn:"শ্রেণি", en:"Class"},
+  dateCol:{bn:"তারিখ", en:"Date"}, dayCol:{bn:"বার", en:"Day"}, yearCol:{bn:"বছর", en:"Year"}, examCol:{bn:"পরীক্ষার নাম", en:"Exam Name"},
+  passCol:{bn:"পাসের হার", en:"Pass Rate"}, gpaCol:{bn:"জিপিএ-৫", en:"GPA-5"}, titleCol:{bn:"শিরোনাম", en:"Title"}, categoryCol:{bn:"বিভাগ", en:"Category"}, actionCol:{bn:"অ্যাকশন", en:"Action"},
+  breakLabel:{bn:"-- বিরতি --", en:"-- Break --"}
+};
+
+function t(key){ return (I18N[key] && I18N[key][currentLang]) || key; }
+
+/* ==================================================================
+   BILINGUAL DATA
+   ================================================================== */
+const catNames = {
+  exam:{bn:"পরীক্ষা", en:"Exam"}, event:{bn:"অনুষ্ঠান", en:"Event"}, admission:{bn:"ভর্তি", en:"Admission"}, general:{bn:"সাধারণ", en:"General"}
+};
+const catClass = {exam:"tag-exam", event:"tag-event", admission:"tag-admission", general:"tag-general"};
+
+let notices = [
+  {id:1, cat:"exam", title:{bn:"বার্ষিক পরীক্ষার সময়সূচি প্রকাশ", en:"Annual exam schedule published"}, date:{bn:"১০ জুলাই, ২০২৬", en:"July 10, 2026"}},
+  {id:2, cat:"event", title:{bn:"নবম শ্রেণির শিক্ষার্থীদের জন্য বিজ্ঞান মেলা নিবন্ধন শুরু", en:"Science fair registration opens for Class 9 students"}, date:{bn:"৮ জুলাই, ২০২৬", en:"July 8, 2026"}},
+  {id:3, cat:"admission", title:{bn:"২০২৬ শিক্ষাবর্ষে ভর্তি বিজ্ঞপ্তি প্রকাশিত হয়েছে", en:"Admission notice published for the 2026 academic year"}, date:{bn:"৫ জুলাই, ২০২৬", en:"July 5, 2026"}},
+  {id:4, cat:"general", title:{bn:"বিদ্যালয় গ্রীষ্মকালীন ছুটি সংক্রান্ত নোটিশ", en:"Notice regarding school summer vacation"}, date:{bn:"২৮ জুন, ২০২৬", en:"June 28, 2026"}},
+  {id:5, cat:"event", title:{bn:"অভিভাবক সমাবেশ অনুষ্ঠিত হবে আগামী শনিবার", en:"Parents' meeting to be held next Saturday"}, date:{bn:"২৪ জুন, ২০২৬", en:"June 24, 2026"}},
+  {id:6, cat:"exam", title:{bn:"অর্ধ-বার্ষিক পরীক্ষার ফলাফল প্রকাশ", en:"Half-yearly exam results published"}, date:{bn:"১৮ জুন, ২০২৬", en:"June 18, 2026"}},
+  {id:7, cat:"general", title:{bn:"শিক্ষক নিয়োগ বিজ্ঞপ্তি", en:"Teacher recruitment notice"}, date:{bn:"১০ জুন, ২০২৬", en:"June 10, 2026"}},
+];
+
+const events = [
+  {title:{bn:"বার্ষিক ক্রীড়া প্রতিযোগিতা", en:"Annual Sports Competition"}, date:{bn:"২৫ জুলাই, ২০২৬", en:"July 25, 2026"}, icon:"bi-trophy"},
+  {title:{bn:"বিজ্ঞান মেলা ২০২৬", en:"Science Fair 2026"}, date:{bn:"২ আগস্ট, ২০২৬", en:"August 2, 2026"}, icon:"bi-lightbulb"},
+  {title:{bn:"অভিভাবক সমাবেশ", en:"Parents' Gathering"}, date:{bn:"১৮ জুলাই, ২০২৬", en:"July 18, 2026"}, icon:"bi-people"},
+  {title:{bn:"বার্ষিক সাংস্কৃতিক অনুষ্ঠান", en:"Annual Cultural Program"}, date:{bn:"১৫ সেপ্টেম্বর, ২০২৬", en:"September 15, 2026"}, icon:"bi-mic"},
+];
+
+const achievements = {
+  student:[
+    {title:{bn:"জাতীয় গণিত অলিম্পিয়াডে স্বর্ণপদক", en:"Gold medal at National Math Olympiad"}, who:{bn:"তানভীর আহমেদ, শ্রেণি: ৯", en:"Tanvir Ahmed, Class 9"}, icon:"bi-award"},
+    {title:{bn:"আন্তঃস্কুল বিতর্ক প্রতিযোগিতায় চ্যাম্পিয়ন", en:"Champion at Inter-school Debate Competition"}, who:{bn:"বিদ্যালয় বিতর্ক দল", en:"School Debate Team"}, icon:"bi-chat-square-quote"},
+    {title:{bn:"বিভাগীয় বিজ্ঞান মেলায় প্রথম স্থান", en:"1st place at Divisional Science Fair"}, who:{bn:"সাদিয়া ইসলাম, শ্রেণি: ১০", en:"Sadia Islam, Class 10"}, icon:"bi-flask"},
+  ],
+  teacher:[
+    {title:{bn:"শ্রেষ্ঠ শিক্ষক সম্মাননা ২০২৫", en:"Best Teacher Award 2025"}, who:{bn:"জনাব রফিকুল ইসলাম", en:"Mr. Rafiqul Islam"}, icon:"bi-person-badge"},
+    {title:{bn:"জাতীয় শিক্ষা সেমিনারে প্রবন্ধ উপস্থাপন", en:"Paper presented at National Education Seminar"}, who:{bn:"বেগম নাসরিন সুলতানা", en:"Ms. Nasrin Sultana"}, icon:"bi-journal-text"},
+  ],
+  awards:[
+    {title:{bn:"সেরা মাধ্যমিক বিদ্যালয় সম্মাননা (জেলা)", en:"Best Secondary School Award (District)"}, who:{bn:"২০২৫", en:"2025"}, icon:"bi-trophy-fill"},
+    {title:{bn:"পরিচ্ছন্ন ক্যাম্পাস পুরস্কার", en:"Clean Campus Award"}, who:{bn:"২০২৪", en:"2024"}, icon:"bi-flower1"},
+  ],
+  competition:[
+    {title:{bn:"আন্তঃস্কুল ফুটবল টুর্নামেন্ট — রানার আপ", en:"Inter-school Football Tournament — Runner-up"}, who:{bn:"২০২৬", en:"2026"}, icon:"bi-dribbble"},
+    {title:{bn:"জাতীয় রচনা প্রতিযোগিতা — ২য় স্থান", en:"National Essay Competition — 2nd place"}, who:{bn:"২০২৬", en:"2026"}, icon:"bi-pencil-square"},
+  ]
+};
+
+const committee = [
+  {name:{bn:"জনাব মোহাম্মদ ইউনুস আলী", en:"Mr. Mohammad Younus Ali"}, role:{bn:"সভাপতি, পরিচালনা কমিটি", en:"Chairman, Managing Committee"}},
+  {name:{bn:"ডা. ফরিদা বেগম", en:"Dr. Farida Begum"}, role:{bn:"সহ-সভাপতি", en:"Vice Chairperson"}},
+  {name:{bn:"জনাব আব্দুল হাকিম", en:"Mr. Abdul Hakim"}, role:{bn:"প্রধান শিক্ষক ও সদস্য-সচিব", en:"Headmaster & Member Secretary"}},
+  {name:{bn:"জনাব কামরুল হাসান", en:"Mr. Kamrul Hasan"}, role:{bn:"অভিভাবক প্রতিনিধি", en:"Parent Representative"}},
+];
+const staff = [
+  {name:{bn:"বেগম নাসরিন সুলতানা", en:"Ms. Nasrin Sultana"}, role:{bn:"সহকারী প্রধান শিক্ষক (বাংলা)", en:"Assistant Headmistress (Bangla)"}},
+  {name:{bn:"জনাব রফিকুল ইসলাম", en:"Mr. Rafiqul Islam"}, role:{bn:"সিনিয়র শিক্ষক (গণিত)", en:"Senior Teacher (Mathematics)"}},
+  {name:{bn:"জনাব শাহাদাত হোসেন", en:"Mr. Shahadat Hossain"}, role:{bn:"সিনিয়র শিক্ষক (বিজ্ঞান)", en:"Senior Teacher (Science)"}},
+  {name:{bn:"সুলতানা পারভীন", en:"Sultana Parvin"}, role:{bn:"সহকারী শিক্ষক (ইংরেজি)", en:"Assistant Teacher (English)"}},
+  {name:{bn:"জনাব মিজানুর রহমান", en:"Mr. Mizanur Rahman"}, role:{bn:"সহকারী শিক্ষক (সমাজবিজ্ঞান)", en:"Assistant Teacher (Social Science)"}},
+  {name:{bn:"তাহমিনা আক্তার", en:"Tahmina Akter"}, role:{bn:"সহকারী শিক্ষক (ধর্ম শিক্ষা)", en:"Assistant Teacher (Religious Studies)"}},
+];
+const facilities = [
+  {icon:"bi-book-half", title:{bn:"সমৃদ্ধ গ্রন্থাগার", en:"Well-stocked Library"}},
+  {icon:"bi-flask", title:{bn:"বিজ্ঞান ল্যাবরেটরি", en:"Science Laboratory"}},
+  {icon:"bi-laptop", title:{bn:"কম্পিউটার ল্যাব", en:"Computer Lab"}},
+  {icon:"bi-dribbble", title:{bn:"খেলার মাঠ", en:"Playground"}},
+  {icon:"bi-heart-pulse", title:{bn:"মেডিকেল কক্ষ", en:"Medical Room"}},
+  {icon:"bi-shield-check", title:{bn:"সিসিটিভি নিরাপত্তা", en:"CCTV Security"}},
+  {icon:"bi-bus-front", title:{bn:"পরিবহন সুবিধা", en:"Transport Service"}},
+  {icon:"bi-cup-hot", title:{bn:"ক্যান্টিন", en:"Canteen"}},
+];
+
+const goals = [
+  {bn:"প্রতিটি শিক্ষার্থীর সামগ্রিক (একাডেমিক, শারীরিক, মানসিক ও নৈতিক) বিকাশ নিশ্চিত করা।", en:"Ensure the holistic (academic, physical, mental and moral) development of every student."},
+  {bn:"আধুনিক ও যুগোপযোগী শিক্ষা পদ্ধতির মাধ্যমে শিক্ষার্থীদের প্রতিযোগিতামূলক বিশ্বের উপযোগী করে গড়ে তোলা।", en:"Prepare students for a competitive world through modern, up-to-date teaching methods."},
+  {bn:"সহশিক্ষা কার্যক্রমের মাধ্যমে নেতৃত্ব ও সৃজনশীলতার বিকাশ ঘটানো।", en:"Develop leadership and creativity through co-curricular activities."},
+  {bn:"সমাজের প্রতি দায়বদ্ধ ও মানবিক গুণসম্পন্ন নাগরিক তৈরি করা।", en:"Raise socially responsible citizens with strong human values."},
+];
+
+const subjectsByClass = {
+  "6":[{bn:"বাংলা",en:"Bangla"},{bn:"ইংরেজি",en:"English"},{bn:"গণিত",en:"Mathematics"},{bn:"বিজ্ঞান",en:"Science"},{bn:"বাংলাদেশ ও বিশ্বপরিচয়",en:"Bangladesh & Global Studies"},{bn:"ধর্ম শিক্ষা",en:"Religious Studies"},{bn:"তথ্য ও যোগাযোগ প্রযুক্তি",en:"ICT"},{bn:"শারীরিক শিক্ষা",en:"Physical Education"}],
+  "7":[{bn:"বাংলা",en:"Bangla"},{bn:"ইংরেজি",en:"English"},{bn:"গণিত",en:"Mathematics"},{bn:"বিজ্ঞান",en:"Science"},{bn:"বাংলাদেশ ও বিশ্বপরিচয়",en:"Bangladesh & Global Studies"},{bn:"ধর্ম শিক্ষা",en:"Religious Studies"},{bn:"তথ্য ও যোগাযোগ প্রযুক্তি",en:"ICT"},{bn:"কৃষি শিক্ষা",en:"Agriculture Studies"}],
+  "8":[{bn:"বাংলা",en:"Bangla"},{bn:"ইংরেজি",en:"English"},{bn:"গণিত",en:"Mathematics"},{bn:"বিজ্ঞান",en:"Science"},{bn:"বাংলাদেশ ও বিশ্বপরিচয়",en:"Bangladesh & Global Studies"},{bn:"ধর্ম শিক্ষা",en:"Religious Studies"},{bn:"তথ্য ও যোগাযোগ প্রযুক্তি",en:"ICT"},{bn:"শারীরিক শিক্ষা",en:"Physical Education"}],
+  "9-10":[{bn:"বাংলা ১ম ও ২য় পত্র",en:"Bangla 1st & 2nd Paper"},{bn:"ইংরেজি ১ম ও ২য় পত্র",en:"English 1st & 2nd Paper"},{bn:"উচ্চতর গণিত / সাধারণ গণিত",en:"Higher Math / General Math"},{bn:"পদার্থবিজ্ঞান",en:"Physics"},{bn:"রসায়ন",en:"Chemistry"},{bn:"জীববিজ্ঞান",en:"Biology"},{bn:"বাংলাদেশের ইতিহাস ও বিশ্বসভ্যতা",en:"History of Bangladesh & World Civilization"},{bn:"ভূগোল ও পরিবেশ",en:"Geography & Environment"},{bn:"তথ্য ও যোগাযোগ প্রযুক্তি",en:"ICT"}]
+};
+const classNames = {"6":{bn:"ষষ্ঠ শ্রেণি",en:"Class 6"}, "7":{bn:"সপ্তম শ্রেণি",en:"Class 7"}, "8":{bn:"অষ্টম শ্রেণি",en:"Class 8"}, "9-10":{bn:"নবম ও দশম শ্রেণি",en:"Class 9 & 10"}};
+
+const dayHeaders = [
+  {bn:"শনিবার",en:"Saturday"},{bn:"রবিবার",en:"Sunday"},{bn:"সোমবার",en:"Monday"},{bn:"মঙ্গলবার",en:"Tuesday"},{bn:"বুধবার",en:"Wednesday"},{bn:"বৃহস্পতিবার",en:"Thursday"}
+];
+const classRoutine = [
+  {time:{bn:"সকাল ৮:০০ - ৮:৪৫",en:"8:00 - 8:45 AM"}, subjects:[{bn:"বাংলা",en:"Bangla"},{bn:"ইংরেজি",en:"English"},{bn:"গণিত",en:"Math"},{bn:"বিজ্ঞান",en:"Science"},{bn:"বাংলা",en:"Bangla"},{bn:"ইংরেজি",en:"English"}]},
+  {time:{bn:"সকাল ৮:৪৫ - ৯:৩০",en:"8:45 - 9:30 AM"}, subjects:[{bn:"ইংরেজি",en:"English"},{bn:"গণিত",en:"Math"},{bn:"বিজ্ঞান",en:"Science"},{bn:"বাংলা",en:"Bangla"},{bn:"গণিত",en:"Math"},{bn:"বিজ্ঞান",en:"Science"}]},
+  {time:{bn:"সকাল ৯:৩০ - ১০:১৫",en:"9:30 - 10:15 AM"}, subjects:[{bn:"গণিত",en:"Math"},{bn:"বিজ্ঞান",en:"Science"},{bn:"বাংলা",en:"Bangla"},{bn:"ইংরেজি",en:"English"},{bn:"বিজ্ঞান",en:"Science"},{bn:"গণিত",en:"Math"}]},
+  {time:{bn:"সকাল ১০:১৫ - ১০:৩০",en:"10:15 - 10:30 AM"}, subjects:null, isBreak:true},
+  {time:{bn:"সকাল ১০:৩০ - ১১:১৫",en:"10:30 - 11:15 AM"}, subjects:[{bn:"ধর্ম শিক্ষা",en:"Religion"},{bn:"সমাজবিজ্ঞান",en:"Social Sc."},{bn:"আইসিটি",en:"ICT"},{bn:"ধর্ম শিক্ষা",en:"Religion"},{bn:"সমাজবিজ্ঞান",en:"Social Sc."},{bn:"আইসিটি",en:"ICT"}]},
+  {time:{bn:"সকাল ১১:১৫ - ১২:০০",en:"11:15 AM - 12:00 PM"}, subjects:[{bn:"শারীরিক শিক্ষা",en:"P.E."},{bn:"আইসিটি",en:"ICT"},{bn:"সমাজবিজ্ঞান",en:"Social Sc."},{bn:"শারীরিক শিক্ষা",en:"P.E."},{bn:"আইসিটি",en:"ICT"},{bn:"সমাজবিজ্ঞান",en:"Social Sc."}]},
+];
+
+const examRoutine = [
+  {date:{bn:"১০ আগস্ট, ২০২৬",en:"August 10, 2026"}, day:{bn:"সোমবার",en:"Monday"}, subject:{bn:"বাংলা ১ম পত্র",en:"Bangla 1st Paper"}, cls:{bn:"৬ষ্ঠ - ১০ম",en:"6 - 10"}, time:{bn:"সকাল ১০:০০ - ১:০০",en:"10:00 AM - 1:00 PM"}},
+  {date:{bn:"১২ আগস্ট, ২০২৬",en:"August 12, 2026"}, day:{bn:"বুধবার",en:"Wednesday"}, subject:{bn:"ইংরেজি ১ম পত্র",en:"English 1st Paper"}, cls:{bn:"৬ষ্ঠ - ১০ম",en:"6 - 10"}, time:{bn:"সকাল ১০:০০ - ১:০০",en:"10:00 AM - 1:00 PM"}},
+  {date:{bn:"১৪ আগস্ট, ২০২৬",en:"August 14, 2026"}, day:{bn:"শুক্রবার",en:"Friday"}, subject:{bn:"গণিত",en:"Mathematics"}, cls:{bn:"৬ষ্ঠ - ১০ম",en:"6 - 10"}, time:{bn:"সকাল ১০:০০ - ১:০০",en:"10:00 AM - 1:00 PM"}},
+  {date:{bn:"১৭ আগস্ট, ২০২৬",en:"August 17, 2026"}, day:{bn:"সোমবার",en:"Monday"}, subject:{bn:"বিজ্ঞান",en:"Science"}, cls:{bn:"৬ষ্ঠ - ৮ম",en:"6 - 8"}, time:{bn:"সকাল ১০:০০ - ১:০০",en:"10:00 AM - 1:00 PM"}},
+  {date:{bn:"১৭ আগস্ট, ২০২৬",en:"August 17, 2026"}, day:{bn:"সোমবার",en:"Monday"}, subject:{bn:"পদার্থবিজ্ঞান",en:"Physics"}, cls:{bn:"৯ম - ১০ম",en:"9 - 10"}, time:{bn:"সকাল ১০:০০ - ১:০০",en:"10:00 AM - 1:00 PM"}},
+];
+
+const academicCalendar = [
+  {title:{bn:"বার্ষিক ক্রীড়া প্রতিযোগিতা",en:"Annual Sports Competition"}, date:{bn:"২৫ জুলাই, ২০২৬",en:"July 25, 2026"}},
+  {title:{bn:"অর্ধ-বার্ষিক পরীক্ষা শুরু",en:"Half-yearly exams begin"}, date:{bn:"১০ আগস্ট, ২০২৬",en:"August 10, 2026"}},
+  {title:{bn:"স্বাধীনতা দিবস উদযাপন",en:"Independence Day Celebration"}, date:{bn:"২৬ মার্চ, ২০২৭",en:"March 26, 2027"}},
+  {title:{bn:"বার্ষিক সাংস্কৃতিক অনুষ্ঠান",en:"Annual Cultural Program"}, date:{bn:"১৫ সেপ্টেম্বর, ২০২৬",en:"September 15, 2026"}},
+  {title:{bn:"বার্ষিক পরীক্ষা শুরু",en:"Annual exams begin"}, date:{bn:"১ ডিসেম্বর, ২০২৬",en:"December 1, 2026"}},
+  {title:{bn:"শীতকালীন ছুটি শুরু",en:"Winter vacation begins"}, date:{bn:"২৫ ডিসেম্বর, ২০২৬",en:"December 25, 2026"}},
+];
+
+const results = [
+  {year:"2026", cls:"10", exam:{bn:"নির্বাচনী পরীক্ষা",en:"Selection Test"}, pass:{bn:"৯৮%",en:"98%"}, gpa5:{bn:"৪২",en:"42"}},
+  {year:"2025", cls:"10", exam:{bn:"মাধ্যমিক (SSC)",en:"Secondary (SSC)"}, pass:{bn:"৯৭%",en:"97%"}, gpa5:{bn:"৩৮",en:"38"}},
+  {year:"2024", cls:"10", exam:{bn:"মাধ্যমিক (SSC)",en:"Secondary (SSC)"}, pass:{bn:"৯৫%",en:"95%"}, gpa5:{bn:"৩৩",en:"33"}},
+  {year:"2025", cls:"9", exam:{bn:"বার্ষিক পরীক্ষা",en:"Annual Exam"}, pass:{bn:"৯৬%",en:"96%"}, gpa5:{bn:"৩৫",en:"35"}},
+];
+const classDisplay = {"10":{bn:"১০",en:"10"}, "9":{bn:"৯",en:"9"}};
+const yearDisplay = {"2026":{bn:"২০২৬",en:"2026"}, "2025":{bn:"২০২৫",en:"2025"}, "2024":{bn:"২০২৪",en:"2024"}};
+
+const galleryData = {
+  photo:[
+    {title:{bn:"বার্ষিক ক্রীড়া প্রতিযোগিতা ২০২৫",en:"Annual Sports Competition 2025"}, color:"linear-gradient(135deg,#0A3D7A,#1666C7)"},
+    {title:{bn:"বিজ্ঞান মেলা প্রদর্শনী",en:"Science Fair Exhibition"}, color:"linear-gradient(135deg,#227A45,#2F9E5B)"},
+    {title:{bn:"বার্ষিক সাংস্কৃতিক সন্ধ্যা",en:"Annual Cultural Evening"}, color:"linear-gradient(135deg,#062B57,#0A3D7A)"},
+    {title:{bn:"শ্রেণিকক্ষ কার্যক্রম",en:"Classroom Activities"}, color:"linear-gradient(135deg,#1666C7,#2F9E5B)"},
+    {title:{bn:"পুরস্কার বিতরণী অনুষ্ঠান",en:"Prize Giving Ceremony"}, color:"linear-gradient(135deg,#0A3D7A,#227A45)"},
+    {title:{bn:"বৃক্ষরোপণ কর্মসূচি",en:"Tree Plantation Program"}, color:"linear-gradient(135deg,#227A45,#062B57)"},
+  ],
+  video:[
+    {title:{bn:"বার্ষিক প্রতিবেদন ২০২৫ (ভিডিও)",en:"Annual Report 2025 (Video)"}, color:"linear-gradient(135deg,#062B57,#227A45)"},
+    {title:{bn:"বিদ্যালয় পরিচিতিমূলক ভিডিও",en:"School Introduction Video"}, color:"linear-gradient(135deg,#0A3D7A,#1666C7)"},
+    {title:{bn:"সাংস্কৃতিক অনুষ্ঠানের হাইলাইটস",en:"Cultural Program Highlights"}, color:"linear-gradient(135deg,#227A45,#0A3D7A)"},
+  ],
+  events:[
+    {title:{bn:"নবীন বরণ অনুষ্ঠান",en:"Freshers' Welcome"}, color:"linear-gradient(135deg,#1666C7,#062B57)"},
+    {title:{bn:"বিজ্ঞান মেলা ২০২৬",en:"Science Fair 2026"}, color:"linear-gradient(135deg,#2F9E5B,#0A3D7A)"},
+    {title:{bn:"অভিভাবক সমাবেশ",en:"Parents' Gathering"}, color:"linear-gradient(135deg,#0A3D7A,#227A45)"},
+  ],
+  sports:[
+    {title:{bn:"বার্ষিক ক্রীড়া উদ্বোধনী",en:"Annual Sports Inauguration"}, color:"linear-gradient(135deg,#062B57,#1666C7)"},
+    {title:{bn:"আন্তঃশ্রেণি ফুটবল প্রতিযোগিতা",en:"Inter-class Football Competition"}, color:"linear-gradient(135deg,#227A45,#2F9E5B)"},
+    {title:{bn:"পুরস্কার বিতরণী — ক্রীড়া",en:"Prize Giving — Sports"}, color:"linear-gradient(135deg,#0A3D7A,#062B57)"},
+  ],
+  cultural:[
+    {title:{bn:"বার্ষিক সাংস্কৃতিক সন্ধ্যা",en:"Annual Cultural Evening"}, color:"linear-gradient(135deg,#1666C7,#227A45)"},
+    {title:{bn:"একুশে ফেব্রুয়ারি অনুষ্ঠান",en:"21st February Program"}, color:"linear-gradient(135deg,#0A3D7A,#2F9E5B)"},
+    {title:{bn:"নৃত্য ও সংগীত প্রতিযোগিতা",en:"Dance & Music Competition"}, color:"linear-gradient(135deg,#062B57,#1666C7)"},
+  ]
+};
+
+const faqs = [
+  {q:{bn:"ভর্তির জন্য বয়সসীমা কত?",en:"What is the age limit for admission?"}, a:{bn:"শ্রেণিভেদে বয়সসীমা ভিন্ন হয়ে থাকে। বিস্তারিত তথ্যের জন্য ভর্তি পাতা দেখুন অথবা বিদ্যালয় অফিসে যোগাযোগ করুন।",en:"The age limit varies by class. See the Admission page or contact the school office for details."}},
+  {q:{bn:"বৃত্তি বা আর্থিক সহায়তার ব্যবস্থা আছে কি?",en:"Are scholarships or financial aid available?"}, a:{bn:"হ্যাঁ, মেধাবী ও দরিদ্র শিক্ষার্থীদের জন্য বিদ্যালয়ের পক্ষ থেকে বৃত্তি ও ফি মওকুফের ব্যবস্থা রয়েছে।",en:"Yes, the school offers scholarships and fee waivers for meritorious and underprivileged students."}},
+  {q:{bn:"পরিবহন সুবিধা কি পাওয়া যায়?",en:"Is transport service available?"}, a:{bn:"বিদ্যালয়ের নির্দিষ্ট রুটে বাস পরিবহন সুবিধা চালু আছে। বিস্তারিত জানতে অফিসে যোগাযোগ করুন।",en:"Bus service is available on fixed school routes. Contact the office for details."}},
+  {q:{bn:"অভিভাবক-শিক্ষক সাক্ষাতের সময় কখন?",en:"When can parents meet teachers?"}, a:{bn:"প্রতি মাসের শেষ শনিবার অভিভাবক সমাবেশ অনুষ্ঠিত হয়। এছাড়া প্রয়োজনে সরাসরি যোগাযোগ করা যাবে।",en:"A parents' meeting is held on the last Saturday of each month. You may also contact the school directly if needed."}},
+];
+
+const admissionSteps = [
+  {title:{bn:"আবেদন ফরম সংগ্রহ",en:"Collect the application form"}, desc:{bn:"বিদ্যালয়ের অফিস থেকে অথবা এই ওয়েবসাইট থেকে আবেদন ফরম সংগ্রহ করুন।",en:"Collect the form from the school office or download it from this website."}},
+  {title:{bn:"ফরম পূরণ ও জমাদান",en:"Complete and submit the form"}, desc:{bn:"প্রয়োজনীয় তথ্য ও কাগজপত্রসহ ফরমটি পূরণ করে নির্ধারিত সময়ের মধ্যে অফিসে জমা দিন।",en:"Fill in the required details, attach documents, and submit at the office within the deadline."}},
+  {title:{bn:"ভর্তি পরীক্ষা",en:"Admission test"}, desc:{bn:"নির্ধারিত তারিখে লিখিত ভর্তি পরীক্ষায় অংশগ্রহণ করতে হবে।",en:"Take the written admission test on the scheduled date."}},
+  {title:{bn:"ফলাফল প্রকাশ ও মৌখিক সাক্ষাৎকার",en:"Result & interview"}, desc:{bn:"উত্তীর্ণ শিক্ষার্থীদের তালিকা প্রকাশ করা হবে এবং অভিভাবকসহ সংক্ষিপ্ত সাক্ষাৎকার নেওয়া হবে।",en:"A list of successful candidates will be published, followed by a brief interview with parents."}},
+  {title:{bn:"ভর্তি নিশ্চায়ন",en:"Confirm admission"}, desc:{bn:"নির্ধারিত ভর্তি ফি জমা দিয়ে আসন নিশ্চিত করুন।",en:"Confirm the seat by paying the prescribed admission fee."}},
+];
+const documentsList = [
+  {bn:"পূরণকৃত আবেদন ফরম",en:"Completed application form"},
+  {bn:"শিক্ষার্থীর জন্ম নিবন্ধন সনদের ফটোকপি",en:"Photocopy of the student's birth registration certificate"},
+  {bn:"পূর্ববর্তী শ্রেণির প্রশংসাপত্র / নম্বরপত্র",en:"Testimonial / mark sheet from the previous class"},
+  {bn:"পাসপোর্ট আকারের ৪ কপি সদ্য তোলা ছবি",en:"4 recent passport-sized photographs"},
+  {bn:"অভিভাবকের জাতীয় পরিচয়পত্রের ফটোকপি",en:"Photocopy of guardian's national ID card"},
+];
+const eligibilityList = [
+  {bn:"প্রার্থীর বয়স সংশ্লিষ্ট শ্রেণির জন্য নির্ধারিত সীমার মধ্যে হতে হবে।",en:"The candidate's age must fall within the limit set for the relevant class."},
+  {bn:"পূর্ববর্তী শ্রেণিতে উত্তীর্ণ হতে হবে।",en:"Must have passed the previous class."},
+  {bn:"সদাচরণ ও শৃঙ্খলার সনদ থাকতে হবে (প্রযোজ্য ক্ষেত্রে)।",en:"A certificate of good conduct is required (where applicable)."},
+];
+const importantDates = [
+  {label:{bn:"আবেদন শুরু",en:"Applications open"}, value:{bn:"১ ডিসেম্বর, ২০২৫",en:"December 1, 2025"}},
+  {label:{bn:"আবেদনের শেষ তারিখ",en:"Application deadline"}, value:{bn:"২০ জানুয়ারি, ২০২৬",en:"January 20, 2026"}},
+  {label:{bn:"ভর্তি পরীক্ষা",en:"Admission test"}, value:{bn:"২৮ জানুয়ারি, ২০২৬",en:"January 28, 2026"}},
+  {label:{bn:"ফলাফল প্রকাশ",en:"Result announced"}, value:{bn:"৫ ফেব্রুয়ারি, ২০২৬",en:"February 5, 2026"}},
+  {label:{bn:"ভর্তি নিশ্চায়ন শেষ",en:"Confirmation deadline"}, value:{bn:"১৫ ফেব্রুয়ারি, ২০২৬",en:"February 15, 2026"}},
+];
+const feesList = [
+  {label:{bn:"ভর্তি ফি",en:"Admission fee"}, value:{bn:"২,৫০০ টাকা",en:"BDT 2,500"}},
+  {label:{bn:"সেশন চার্জ",en:"Session charge"}, value:{bn:"১,৮০০ টাকা",en:"BDT 1,800"}},
+  {label:{bn:"মাসিক বেতন",en:"Monthly tuition"}, value:{bn:"৬০০ টাকা",en:"BDT 600"}},
+  {label:{bn:"ক্রীড়া ও সাংস্কৃতিক চাঁদা",en:"Sports & cultural fee"}, value:{bn:"৩০০ টাকা",en:"BDT 300"}},
+];
+
+/* ==================================================================
+   PAGE ROUTER
+   ================================================================== */
+function goToPage(pageName){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  const target = document.getElementById('page-'+pageName);
+  if(target){ target.classList.add('active'); }
+  document.querySelectorAll('.nav-link-school').forEach(l=>{ l.classList.toggle('active', l.dataset.page===pageName); });
+  window.scrollTo({top:0, behavior:'smooth'});
+  const collapse = document.getElementById('mainNav');
+  if(collapse.classList.contains('show')){ bootstrap.Collapse.getOrCreateInstance(collapse).hide(); }
+}
+document.querySelectorAll('[data-page]').forEach(el=>{
+  el.addEventListener('click', function(e){ e.preventDefault(); goToPage(this.dataset.page); });
+});
+
+/* ==================================================================
+   RENDER FUNCTIONS (language-aware)
+   ================================================================== */
+function noticeCardHTML(n, compact){
+  return `<div class="card-school p-3 d-flex flex-row align-items-start gap-3">
+    <div class="icon-tile mb-0" style="width:44px;height:44px;font-size:1.1rem;"><i class="bi bi-file-earmark-text"></i></div>
+    <div class="flex-grow-1">
+      <div class="d-flex justify-content-between flex-wrap gap-2">
+        <h6 class="mb-1">${n.title[currentLang]}</h6>
+        <span class="notice-tag ${catClass[n.cat]}">${catNames[n.cat][currentLang]}</span>
+      </div>
+      <small style="color:var(--text-soft)"><i class="bi bi-calendar3 me-1"></i>${n.date[currentLang]}</small>
+    </div>
+    ${compact ? '' : `<button class="btn btn-sm btn-outline-secondary flex-shrink-0" title="PDF"><i class="bi bi-download"></i></button>`}
+  </div>`;
+}
+function renderTicker(){
+  document.getElementById('tickerTrack').innerHTML = notices.map(n=>`<span><i class="bi bi-dot"></i> ${n.title[currentLang]} — <em>${n.date[currentLang]}</em></span>`).join('');
+}
+function renderHomeNotices(){ document.getElementById('homeNoticeList').innerHTML = notices.slice(0,3).map(n=>noticeCardHTML(n,true)).join(''); }
+function renderHomeEvents(){
+  document.getElementById('homeEventList').innerHTML = events.map(ev=>`
+    <div class="card-school p-3 d-flex flex-row align-items-center gap-3">
+      <div class="icon-tile mb-0" style="width:44px;height:44px;font-size:1.1rem;"><i class="bi ${ev.icon}"></i></div>
+      <div><h6 class="mb-1">${ev.title[currentLang]}</h6><small style="color:var(--text-soft)"><i class="bi bi-calendar-event me-1"></i>${ev.date[currentLang]}</small></div>
+    </div>`).join('');
+}
+function renderHomeAchievements(){
+  document.getElementById('homeAchievements').innerHTML = achievements.student.map(a=>`
+    <div class="col-md-4"><div class="card-school p-4 text-center h-100"><div class="icon-tile mx-auto"><i class="bi ${a.icon}"></i></div><h6>${a.title[currentLang]}</h6><small style="color:var(--text-soft)">${a.who[currentLang]}</small></div></div>`).join('');
+}
+function renderHomeGallery(){
+  document.getElementById('homeGalleryPreview').innerHTML = galleryData.photo.slice(0,4).map(g=>`
+    <div class="col-6 col-md-3"><div class="gallery-tile" style="background:${g.color}"><div class="g-caption">${g.title[currentLang]}</div></div></div>`).join('');
+}
+function renderFullNotices(filterCat, searchTerm){
+  let list = notices;
+  if(filterCat) list = list.filter(n=>n.cat===filterCat);
+  if(searchTerm) list = list.filter(n=>n.title[currentLang].toLowerCase().includes(searchTerm.toLowerCase()));
+  const container = document.getElementById('fullNoticeList');
+  container.innerHTML = list.length ? list.map(n=>noticeCardHTML(n,false)).join('') : `<p class="text-center py-4" style="color:var(--text-soft)">${t('noResults')}</p>`;
+}
+function renderNoticeCategoryChips(){
+  const cats = [{k:'', label:t('allCategory')}, {k:'general', label:catNames.general[currentLang]}, {k:'exam', label:catNames.exam[currentLang]}, {k:'event', label:catNames.event[currentLang]}, {k:'admission', label:catNames.admission[currentLang]}];
+  const wrap = document.getElementById('noticeCategoryChips');
+  wrap.innerHTML = cats.map((c,i)=>`<button class="badge-cat badge rounded-pill px-3 py-2 border-0 ${i===0?'active':''}" data-cat="${c.k}">${c.label}</button>`).join('');
+  wrap.querySelectorAll('button').forEach(btn=>{
+    btn.addEventListener('click', function(){
+      wrap.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
+      this.classList.add('active');
+      renderFullNotices(this.dataset.cat, document.getElementById('noticeSearchInput').value.trim());
+    });
+  });
+}
+document.getElementById('noticeSearchInput').addEventListener('input', function(){
+  const activeCat = document.querySelector('#noticeCategoryChips .active')?.dataset.cat || '';
+  renderFullNotices(activeCat, this.value.trim());
+});
+
+function renderCommittee(){
+  document.getElementById('committeeList').innerHTML = committee.map(c=>`
+    <div class="col-md-3 col-6"><div class="card-school p-4 text-center"><div class="avatar-circle mx-auto" style="width:64px;height:64px;font-size:1.2rem;">${c.name[currentLang].trim().charAt(0)}</div><h6 class="mt-3 mb-0">${c.name[currentLang]}</h6><small style="color:var(--text-soft)">${c.role[currentLang]}</small></div></div>`).join('');
+}
+function renderStaff(){
+  document.getElementById('staffList').innerHTML = staff.map(s=>`
+    <div class="col-md-4 col-6"><div class="card-school p-4 text-center"><div class="avatar-circle mx-auto" style="width:72px;height:72px;font-size:1.4rem;">${s.name[currentLang].trim().charAt(0)}</div><h6 class="mt-3 mb-0">${s.name[currentLang]}</h6><small style="color:var(--text-soft)">${s.role[currentLang]}</small></div></div>`).join('');
+}
+function renderFacilities(){
+  document.getElementById('facilityList').innerHTML = facilities.map(f=>`
+    <div class="col-md-3 col-6"><div class="card-school p-4 text-center"><div class="icon-tile mx-auto"><i class="bi ${f.icon}"></i></div><h6 class="mb-0">${f.title[currentLang]}</h6></div></div>`).join('');
+}
+function renderGoals(){ document.getElementById('goalsList').innerHTML = goals.map(g=>`<li>${g[currentLang]}</li>`).join(''); }
+
+let selectedClass = "6";
+function renderSubjectAccordion(cls){
+  if(cls) selectedClass = cls;
+  document.getElementById('subjectAccordion').innerHTML = Object.keys(subjectsByClass).map((k,i)=>`
+    <div class="accordion-item mb-2" style="border-radius:12px; overflow:hidden; border:1px solid var(--border);">
+      <h2 class="accordion-header">
+        <button class="accordion-button ${k===selectedClass?'':'collapsed'}" type="button" data-bs-toggle="collapse" data-bs-target="#subj-${i}">${classNames[k][currentLang]}</button>
+      </h2>
+      <div id="subj-${i}" class="accordion-collapse collapse ${k===selectedClass?'show':''}">
+        <div class="accordion-body"><div class="d-flex flex-wrap gap-2">${subjectsByClass[k].map(s=>`<span class="badge-cat badge rounded-pill px-3 py-2">${s[currentLang]}</span>`).join('')}</div></div>
+      </div>
+    </div>`).join('');
+}
+document.querySelectorAll('.class-card').forEach(card=>{
+  card.parentElement.addEventListener('click', ()=> renderSubjectAccordion(card.parentElement.dataset.class));
+});
+
+function renderClassRoutine(){
+  document.getElementById('classRoutineHead').innerHTML = `<th>${t('timeCol')}</th>` + dayHeaders.map(d=>`<th>${d[currentLang]}</th>`).join('');
+  document.getElementById('classRoutineBody').innerHTML = classRoutine.map(row=>{
+    if(row.isBreak){ return `<tr><td>${row.time[currentLang]}</td><td colspan="6" class="fw-bold" style="color:var(--accent-green)">${t('breakLabel')}</td></tr>`; }
+    return `<tr><td>${row.time[currentLang]}</td>${row.subjects.map(s=>`<td>${s[currentLang]}</td>`).join('')}</tr>`;
+  }).join('');
+}
+function renderExamRoutine(){
+  document.getElementById('examRoutineHead').innerHTML = `<th>${t('dateCol')}</th><th>${t('dayCol')}</th><th>${t('subjectCol')}</th><th>${t('classCol')}</th><th>${t('timeCol')}</th>`;
+  document.getElementById('examRoutineBody').innerHTML = examRoutine.map(r=>`<tr><td>${r.date[currentLang]}</td><td>${r.day[currentLang]}</td><td>${r.subject[currentLang]}</td><td>${r.cls[currentLang]}</td><td>${r.time[currentLang]}</td></tr>`).join('');
+}
+function renderCalendar(){
+  document.getElementById('calendarList').innerHTML = academicCalendar.map(c=>`
+    <div class="col-md-6"><div class="card-school p-3 d-flex flex-row align-items-center gap-3"><div class="icon-tile mb-0" style="width:44px;height:44px;font-size:1.1rem;"><i class="bi bi-calendar-event"></i></div><div><h6 class="mb-1">${c.title[currentLang]}</h6><small style="color:var(--text-soft)">${c.date[currentLang]}</small></div></div></div>`).join('');
+}
+function populateResultFilters(){
+  document.getElementById('resultClassFilter').innerHTML = `<option value="">${t('allClasses')}</option>` +
+    Object.keys(classDisplay).map(k=>`<option value="${k}">${classDisplay[k][currentLang]}</option>`).join('');
+  document.getElementById('resultYearFilter').innerHTML = `<option value="">${t('allYears')}</option>` +
+    Object.keys(yearDisplay).map(k=>`<option value="${k}">${yearDisplay[k][currentLang]}</option>`).join('');
+}
+function renderResults(clsFilter, yearFilter){
+  document.getElementById('resultsHead').innerHTML = `<th>${t('yearCol')}</th><th>${t('classCol')}</th><th>${t('examCol')}</th><th>${t('passCol')}</th><th>${t('gpaCol')}</th><th></th>`;
+  let list = results;
+  if(clsFilter) list = list.filter(r=>r.cls===clsFilter);
+  if(yearFilter) list = list.filter(r=>r.year===yearFilter);
+  document.getElementById('resultsBody').innerHTML = list.length ? list.map(r=>`
+    <tr><td>${yearDisplay[r.year][currentLang]}</td><td>${classDisplay[r.cls][currentLang]}</td><td>${r.exam[currentLang]}</td><td>${r.pass[currentLang]}</td><td>${r.gpa5[currentLang]}</td>
+    <td><button class="btn btn-sm btn-outline-secondary"><i class="bi bi-download"></i></button></td></tr>`).join('')
+    : `<tr><td colspan="6" class="py-4" style="color:var(--text-soft)">${t('noResults')}</td></tr>`;
+}
+document.getElementById('resultClassFilter').addEventListener('change', ()=> renderResults(document.getElementById('resultClassFilter').value, document.getElementById('resultYearFilter').value));
+document.getElementById('resultYearFilter').addEventListener('change', ()=> renderResults(document.getElementById('resultClassFilter').value, document.getElementById('resultYearFilter').value));
+
+document.querySelectorAll('#academicTabs .nav-link').forEach(btn=>{
+  btn.addEventListener('click', function(){
+    document.querySelectorAll('#academicTabs .nav-link').forEach(b=>b.classList.remove('active'));
+    this.classList.add('active');
+    document.querySelectorAll('.academic-tab').forEach(tb=>tb.classList.add('d-none'));
+    document.getElementById('tab-'+this.dataset.tab).classList.remove('d-none');
+  });
+});
+
+function renderGallery(tab){
+  currentGalleryTab = tab || currentGalleryTab;
+  document.getElementById('galleryGrid').innerHTML = galleryData[currentGalleryTab].map(g=>`
+    <div class="col-md-4 col-6"><div class="gallery-tile" style="background:${g.color}"><div class="g-caption">${currentGalleryTab==='video' ? '<i class="bi bi-play-circle-fill me-1"></i>' : ''}${g.title[currentLang]}</div></div></div>`).join('');
+}
+let currentGalleryTab = 'photo';
+document.querySelectorAll('#galleryTabs .nav-link').forEach(btn=>{
+  btn.addEventListener('click', function(){
+    document.querySelectorAll('#galleryTabs .nav-link').forEach(b=>b.classList.remove('active'));
+    this.classList.add('active');
+    renderGallery(this.dataset.gtab);
+  });
+});
+
+let currentAchieveTab = 'student';
+function renderAchievements(tab){
+  currentAchieveTab = tab || currentAchieveTab;
+  document.getElementById('achieveGrid').innerHTML = achievements[currentAchieveTab].map(a=>`
+    <div class="col-md-4 col-6"><div class="card-school p-4 text-center h-100"><div class="icon-tile mx-auto"><i class="bi ${a.icon}"></i></div><h6>${a.title[currentLang]}</h6><small style="color:var(--text-soft)">${a.who[currentLang]}</small></div></div>`).join('');
+}
+document.querySelectorAll('#achieveTabs .nav-link').forEach(btn=>{
+  btn.addEventListener('click', function(){
+    document.querySelectorAll('#achieveTabs .nav-link').forEach(b=>b.classList.remove('active'));
+    this.classList.add('active');
+    renderAchievements(this.dataset.atab);
+  });
+});
+
+function renderFaq(){
+  document.getElementById('faqList').innerHTML = faqs.map((f,i)=>`
+    <div class="faq-item"><button class="btn-faq" data-faq="${i}">${f.q[currentLang]} <i class="bi bi-chevron-down"></i></button><div class="faq-body" id="faqbody-${i}">${f.a[currentLang]}</div></div>`).join('');
+  document.querySelectorAll('.btn-faq').forEach(btn=>{
+    btn.addEventListener('click', function(){
+      const body = document.getElementById('faqbody-'+this.dataset.faq);
+      const isOpen = body.style.display==='block';
+      document.querySelectorAll('.faq-body').forEach(b=>b.style.display='none');
+      body.style.display = isOpen ? 'none' : 'block';
+    });
+  });
+}
+
+function renderAdmissionExtras(){
+  document.getElementById('admissionSteps').innerHTML = admissionSteps.map((s,i)=>`
+    <div class="step-item"><div class="step-num">${fmtNum(i+1)}</div><h6>${s.title[currentLang]}</h6><p style="color:var(--text-soft)">${s.desc[currentLang]}</p></div>`).join('');
+  document.getElementById('documentsList').innerHTML = documentsList.map(d=>`<li>${d[currentLang]}</li>`).join('');
+  document.getElementById('eligibilityList').innerHTML = eligibilityList.map(e=>`<li>${e[currentLang]}</li>`).join('');
+  document.getElementById('importantDatesTable').innerHTML = `<tbody>${importantDates.map(d=>`<tr><td>${d.label[currentLang]}</td><td class="text-end fw-bold">${d.value[currentLang]}</td></tr>`).join('')}</tbody>`;
+  document.getElementById('feesTable').innerHTML = `<tbody>${feesList.map(f=>`<tr><td>${f.label[currentLang]}</td><td class="text-end fw-bold">${f.value[currentLang]}</td></tr>`).join('')}</tbody>`;
+}
+
+/* ==================================================================
+   STATS COUNTER
+   ================================================================== */
+function animateCounters(){
+  document.querySelectorAll('.stat-num').forEach(el=>{
+    const target = parseInt(el.dataset.count, 10);
+    const suffix = el.dataset.suffix || '';
+    let cur = 0;
+    const step = Math.max(1, Math.ceil(target/60));
+    const iv = setInterval(()=>{ cur += step; if(cur>=target){cur=target; clearInterval(iv);} el.textContent = fmtNum(cur)+suffix; }, 25);
+  });
+}
+const statsObserver = new IntersectionObserver((entries)=>{ entries.forEach(entry=>{ if(entry.isIntersecting){ animateCounters(); statsObserver.disconnect(); } }); }, {threshold:0.4});
+statsObserver.observe(document.getElementById('statsRow'));
+
+/* ==================================================================
+   HERO SLIDER
+   ================================================================== */
+let heroIndex = 0;
+const heroSlides = document.querySelectorAll('.hero-slide-bg');
+const heroDots = document.querySelectorAll('.hero-dot');
+function showHeroSlide(i){ heroSlides.forEach(s=>s.classList.remove('show')); heroDots.forEach(d=>d.classList.remove('active')); heroSlides[i].classList.add('show'); heroDots[i].classList.add('active'); heroIndex=i; }
+heroDots.forEach((dot,i)=> dot.addEventListener('click', ()=>showHeroSlide(i)));
+setInterval(()=>{ showHeroSlide((heroIndex+1) % heroSlides.length); }, 5000);
+
+/* ==================================================================
+   DARK MODE (in-memory only)
+   ================================================================== */
+const darkBtn = document.getElementById('darkModeToggle');
+darkBtn.addEventListener('click', ()=>{
+  const isDark = document.documentElement.getAttribute('data-theme')==='dark';
+  document.documentElement.setAttribute('data-theme', isDark?'light':'dark');
+  darkBtn.innerHTML = isDark ? '<i class="bi bi-moon-stars"></i>' : '<i class="bi bi-sun-fill"></i>';
+});
+
+/* ==================================================================
+   LANGUAGE SWITCHER — the core of this update
+   ================================================================== */
+function applyLanguage(lang){
+  currentLang = lang;
+  document.documentElement.setAttribute('lang', lang);
+  document.body.setAttribute('data-lang', lang);
+  document.getElementById('langSwitcherLabel').textContent = lang==='bn' ? 'বাংলা' : 'English';
+  document.querySelectorAll('.lang-option').forEach(o=> o.classList.toggle('active-lang', o.dataset.lang===lang));
+
+  // Static text via data-i18n
+  document.querySelectorAll('[data-i18n]').forEach(el=>{ el.innerHTML = t(el.dataset.i18n); });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el=>{ el.setAttribute('placeholder', t(el.dataset.i18nPh)); });
+
+  // Page title / meta
+  document.getElementById('pageTitle').textContent = lang==='bn'
+    ? "আথাকরা উচ্চ বিদ্যালয় | জ্ঞানের আলোয় আলোকিত ভবিষ্যৎ"
+    : "Athakara High School | A Future Illuminated by Knowledge";
+
+  // Dynamic sections
+  renderTicker(); renderHomeNotices(); renderHomeEvents(); renderHomeAchievements(); renderHomeGallery();
+  renderNoticeCategoryChips();
+  const activeCatBtn = document.querySelector('#noticeCategoryChips .active');
+  renderFullNotices(activeCatBtn ? activeCatBtn.dataset.cat : '', document.getElementById('noticeSearchInput').value.trim());
+  renderCommittee(); renderStaff(); renderFacilities(); renderGoals();
+  renderSubjectAccordion();
+  renderClassRoutine(); renderExamRoutine(); renderCalendar();
+  populateResultFilters(); renderResults(document.getElementById('resultClassFilter').value, document.getElementById('resultYearFilter').value);
+  renderGallery(); renderAchievements(); renderFaq(); renderAdmissionExtras();
+  renderDateWidget();
+
+  // admin selects that carry categories
+  document.getElementById('newNoticeCat').innerHTML = Object.keys(catNames).map(k=>`<option value="${k}">${catNames[k][currentLang]}</option>`).join('');
+  document.getElementById('adminNoticeHead').innerHTML = `<th>${t('titleCol')}</th><th>${t('categoryCol')}</th><th>${t('dateCol')}</th><th class="text-end">${t('actionCol')}</th>`;
+  renderAdminNoticeTable();
+}
+document.querySelectorAll('.lang-option').forEach(opt=>{
+  opt.addEventListener('click', ()=> applyLanguage(opt.dataset.lang));
+});
+
+/* ==================================================================
+   SEARCH OVERLAY
+   ================================================================== */
+const searchOverlay = document.getElementById('searchOverlay');
+document.getElementById('siteSearchBtn').addEventListener('click', ()=>{ searchOverlay.style.display='block'; document.getElementById('globalSearchInput').focus(); });
+document.getElementById('closeSearchBtn').addEventListener('click', ()=> searchOverlay.style.display='none');
+document.getElementById('globalSearchInput').addEventListener('input', function(){
+  const term = this.value.trim().toLowerCase();
+  const resBox = document.getElementById('globalSearchResults');
+  if(!term){ resBox.innerHTML=''; return; }
+  const matches = notices.filter(n=>n.title[currentLang].toLowerCase().includes(term));
+  resBox.innerHTML = matches.length ? matches.map(n=>`<div class="p-2 border-bottom">${n.title[currentLang]} <small style="color:var(--text-soft)">— ${n.date[currentLang]}</small></div>`).join('') : `<p style="color:var(--text-soft)" class="p-2">${t('noResults')}</p>`;
+});
+
+/* ==================================================================
+   BACK TO TOP
+   ================================================================== */
+const backBtn = document.getElementById('backToTop');
+window.addEventListener('scroll', ()=>{ backBtn.classList.toggle('show', window.scrollY > 400); });
+backBtn.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
+
+/* ==================================================================
+   BENGALI / ENGLISH DATE WIDGET
+   ================================================================== */
+function renderDateWidget(){
+  const now = new Date();
+  if(currentLang==='bn'){
+    const day = banglaDays[now.getDay()]; const date = toBanglaNum(now.getDate()); const month = banglaMonths[now.getMonth()]; const year = toBanglaNum(now.getFullYear());
+    document.getElementById('dateWidgetText').textContent = `আজ ${day}, ${date} ${month} ${year} খ্রিস্টাব্দ`;
+  } else {
+    const day = englishDays[now.getDay()]; const month = englishMonths[now.getMonth()];
+    document.getElementById('dateWidgetText').textContent = `Today is ${day}, ${month} ${now.getDate()}, ${now.getFullYear()}`;
+  }
+}
+
+/* ==================================================================
+   ADMISSION FORM DOWNLOAD (mock)
+   ================================================================== */
+document.getElementById('downloadFormBtn').addEventListener('click', ()=>{
+  const content = currentLang==='bn'
+    ? "আথাকরা উচ্চ বিদ্যালয়\nভর্তি আবেদন ফরম (নমুনা)\n\nশিক্ষার্থীর নাম: ______________________\nজন্ম তারিখ: ______________________\nভর্তির শ্রেণি: ______________________\nঅভিভাবকের নাম: ______________________\nমোবাইল নম্বর: ______________________\nঠিকানা: ______________________\n"
+    : "Athakara High School\nAdmission Application Form (Sample)\n\nStudent Name: ______________________\nDate of Birth: ______________________\nClass Applying For: ______________________\nGuardian's Name: ______________________\nMobile Number: ______________________\nAddress: ______________________\n";
+  const blob = new Blob([content], {type:"text/plain;charset=utf-8"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a'); a.href = url; a.download = currentLang==='bn' ? "ভর্তি_আবেদন_ফরম.txt" : "Admission_Form.txt"; a.click();
+  URL.revokeObjectURL(url);
+});
+
+/* ==================================================================
+   CONTACT FORM (mock)
+   ================================================================== */
+document.getElementById('contactForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  document.getElementById('contactSuccessMsg').classList.remove('d-none');
+  this.reset();
+  setTimeout(()=> document.getElementById('contactSuccessMsg').classList.add('d-none'), 4000);
+});
+
+/* ==================================================================
+   ADMIN LOGIN + DASHBOARD (mock)
+   ================================================================== */
+document.getElementById('adminLoginForm').addEventListener('submit', function(e){ e.preventDefault(); goToPage('admin-dashboard'); renderAdminNoticeTable(); });
+document.querySelectorAll('.admin-nav').forEach(link=>{
+  link.addEventListener('click', function(e){
+    e.preventDefault();
+    document.querySelectorAll('.admin-nav').forEach(l=>l.classList.remove('active'));
+    this.classList.add('active');
+    document.querySelectorAll('.admin-tab').forEach(tb=>tb.classList.add('d-none'));
+    document.getElementById('admintab-'+this.dataset.atab2).classList.remove('d-none');
+  });
+});
+function renderAdminNoticeTable(){
+  document.getElementById('adminNoticeTable').innerHTML = notices.map(n=>`
+    <tr><td>${n.title[currentLang]}</td><td><span class="notice-tag ${catClass[n.cat]}">${catNames[n.cat][currentLang]}</span></td><td>${n.date[currentLang]}</td>
+    <td class="text-end"><button class="btn btn-sm btn-outline-secondary me-1"><i class="bi bi-pencil"></i></button><button class="btn btn-sm btn-outline-danger" onclick="deleteNotice(${n.id})"><i class="bi bi-trash"></i></button></td></tr>`).join('');
+}
+function deleteNotice(id){
+  notices = notices.filter(n=>n.id!==id);
+  renderAdminNoticeTable(); renderTicker(); renderFullNotices('', ''); renderHomeNotices();
+}
+document.getElementById('addNoticeBtn').addEventListener('click', ()=>{ document.getElementById('noticeFormCard').classList.toggle('d-none'); });
+document.getElementById('saveNoticeBtn').addEventListener('click', ()=>{
+  const title = document.getElementById('newNoticeTitle').value.trim();
+  const cat = document.getElementById('newNoticeCat').value;
+  if(!title) return;
+  const now = new Date();
+  const dateStr = currentLang==='bn'
+    ? `${toBanglaNum(now.getDate())} ${banglaMonths[now.getMonth()]}, ${toBanglaNum(now.getFullYear())}`
+    : `${englishMonths[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}`;
+  notices.unshift({id:Date.now(), cat, title:{bn:title, en:title}, date:{bn:dateStr, en:dateStr}});
+  document.getElementById('newNoticeTitle').value='';
+  document.getElementById('noticeFormCard').classList.add('d-none');
+  renderAdminNoticeTable(); renderTicker(); renderFullNotices('', ''); renderHomeNotices();
+});
+
+/* ==================================================================
+   INITIAL RENDER
+   ================================================================== */
+applyLanguage('bn');
+
+window.addEventListener('load', ()=>{ setTimeout(()=>{ document.getElementById('preloader').classList.add('hide'); }, 500); });
+setTimeout(()=>{ document.getElementById('preloader').classList.add('hide'); }, 2500);
+</script>
+</body>
+</html>
